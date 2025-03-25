@@ -21,8 +21,8 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     
     std::memcpy(recvbuf, sendbuf, n * sizeof(float));
     for (int i = 1; i < comm_sz; ++i) {
-        send_offset = ((my_rank - i + comm_sz - 1) % comm_sz) * step;
-        recv_offset = ((my_rank - i - 2 + comm_sz) % comm_sz) * step;
+        send_offset = ((my_rank - i + comm_sz + 1) % comm_sz) * step;
+        recv_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
 
         MPI_Sendrecv(static_cast<float*>(recvbuf) + send_offset, step, MPI_FLOAT, nxt, 0,
             temp_buf, step, MPI_FLOAT, pre, 0, comm, MPI_STATUS_IGNORE);
@@ -34,7 +34,7 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     
     for (int i = 1; i < comm_sz; ++i) {
         send_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
-        recv_offset = ((my_rank - i - 1 + comm_sz) % comm_sz) * step;
+        recv_offset = ((my_rank - i + 1 + comm_sz) % comm_sz) * step;
         
         MPI_Sendrecv(static_cast<float*>(recvbuf) + send_offset, step, MPI_FLOAT, nxt, 0,
             temp_buf, step, MPI_FLOAT, pre, 0, comm, MPI_STATUS_IGNORE);
