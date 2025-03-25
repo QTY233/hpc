@@ -27,7 +27,7 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
         MPI_Sendrecv(static_cast<float*>(recvbuf) + send_offset, step, MPI_FLOAT, nxt, 0,
             temp_buf, step, MPI_FLOAT, pre, 0, comm, MPI_STATUS_IGNORE);
 
-        for (int i = 0; i < step; ++i) {
+        for (int j = 0; j < step; ++j) {
             static_cast<float*>(recvbuf)[recv_offset + j] += temp_buf[j];
         }
     }
@@ -39,7 +39,7 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
         MPI_Sendrecv(static_cast<float*>(recvbuf) + send_offset, step, MPI_FLOAT, nxt, 0,
             temp_buf, step, MPI_FLOAT, pre, 0, comm, MPI_STATUS_IGNORE);
 
-        for (int i = 0; i < step; ++i) {
+        for (int j = 0; j < step; ++j) {
             static_cast<float*>(recvbuf)[recv_offset + j] = temp_buf[j];
         }
     }
