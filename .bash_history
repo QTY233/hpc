@@ -336,3 +336,18 @@ cd ..
 git commit -am "exp1 change"
 git push
 exit
+cp -R /home/course/hpc/assignments/2025/exp2 ~/
+cd ~/exp2/
+ls
+cd ..
+git add .
+git commit -am "exp2 init"
+git push
+ls
+ls -h
+cd .ssh
+;s
+ls
+cat id_rsa
+cd ..
+git push
