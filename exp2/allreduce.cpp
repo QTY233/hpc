@@ -39,8 +39,8 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
 
     for (int i = 0; i < comm_sz - 1; ++i)
     {
-        int send_offset = ((my_rank - i - 1 + comm_sz) % comm_sz) * step;
-        int recv_offset = ((my_rank - i - 2 + comm_sz) % comm_sz) * step;
+        int send_offset = ((my_rank - i + 1 + comm_sz) % comm_sz) * step;
+        int recv_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
         std::cerr << "In cycle2: my_rank is " << my_rank << " i is " << i << " send_offset is " << send_offset << " recv_offset is " << recv_offset << std::endl;
 
         MPI_Request send_req, recv_req;
