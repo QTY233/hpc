@@ -18,6 +18,7 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     float* temp_buf = new float[step+10]; 
 
     std::memcpy(recvbuf, sendbuf, n * sizeof(float));
+    std::cerr << "step is " << step << "n is " << n << std::endl;
 
     for (int i = 0; i < comm_sz - 1; ++i)
     {
@@ -94,6 +95,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < n; ++i)
         if (abs(mpi_recvbuf[i] - ring_recvbuf[i]) > EPS)
         {
+            std::cerr << "wrong i is " << i << std::endl;
             correct = false;
             break;
         }
