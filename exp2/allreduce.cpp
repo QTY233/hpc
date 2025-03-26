@@ -23,6 +23,7 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     {
         int send_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
         int recv_offset = ((my_rank - i - 1 + comm_sz) % comm_sz) * step;
+        std::cerr << "my_rank is " << my_rank << " i is " << i << " send_offset is " << send_offset << " recv_offset is " << recv_offset << std::endl;
 
         MPI_Send((char*)recvbuf + send_offset * sizeof(float), step, MPI_FLOAT, nxt, 0, comm);
 
@@ -36,6 +37,7 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     {
         int send_offset = ((my_rank - i - 1 + comm_sz) % comm_sz) * step;
         int recv_offset = ((my_rank - i - 2 + comm_sz) % comm_sz) * step;
+        std::cerr << "In cycle2: my_rank is " << my_rank << " i is " << i << " send_offset is " << send_offset << " recv_offset is " << recv_offset << std::endl;
 
         MPI_Send((char*)recvbuf + send_offset * sizeof(float), step, MPI_FLOAT, nxt, 0, comm);
 
