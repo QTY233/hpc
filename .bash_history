@@ -351,3 +351,43 @@ ls
 cat id_rsa
 cd ..
 git push
+ls
+git pull
+cd exp2
+spack load openmpi
+source /home/spack/spack/share/spack/setup-env.sh
+spack load openmpi
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+cd ..
+git pull
+cd exp2
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 100000000
+ls
+cd ..
+git add .
+git commit -am "wait for change"
+git push
+git pull
+cat .gitignore
+cd .ssh
+cd ,,
+cd ..
+git rm --cached -r .ssh/
+git commit -m "移除已跟踪文件，并添加到 .gitignore"
+git push
+git pull
+git push
+git status
+git pull --rebase origin main
+git push origin main 
+ls
+cd .ssh
+ls
+ssh-copy-id qty256@QTCCC
+touch ~/.ssh/authorized_keys
+cd .ssh
+ls
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjrzCygXHiDg8HbBOA1vhlRCYgpQVTTIJZ7VAVegJ7myxiUA6nSflZxxKvVM7Valjs894mKYNiE0+tPRCgfTFZVyl8t7U1h2JzjSprS8J8twuadmQbDmZv/GmPe2bQ3tlGnI11M94tslHRcaRHMGQF/P2QYn3bOp6vKU3hXFQdujWrgWNKV2/Ew1KR1mplyuB7YAf/1llIJE7SR9BlSKWmeLCCzsP8geQ8j12WAncc/wLAfTAutzxPEzgt9TT4c41r6p0WW5wMMg7vhKhgawX8RhhvntIPbil5Qv9o99PCcjOl1ZAvacgtepL6HzWTyLK4IX5OxIALTx2seIohhWL4cqyvkeEj01+FlOIX1WBYcpFg5dqpgxIU+ICd8gNtlCl+ucbpqbfB2DQwSIRZdXsd5AZMla2Ya+az4yQSBlV2aMJA9cLwvPA5vQTpBdAq+VayAjnCPvDLFskBsWyuTNukWBjWO/bzRFAovkm7GT6TsYYwHfedRb4noqRtcjkn/Jmq7Sd/jZxx8ZVY+wQbXro/IDTxnBcDIkzlWlfx3GyG2b6Gg0l0pY18pBOVYZsNFHuDm8GB3x+khxXgoNNmsBJR/gn2aa3+1ej95MHR1/3HvHfOFstzOOQRsb/Q2/lJY5mV7mP9IES3Vh9ZSJcCQn8/wfHiYJEgFTGu7QFJ6pDhKQ== qty256@QTCCC" > authorized_keys
+cd ..
+exit
