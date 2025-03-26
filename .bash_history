@@ -391,3 +391,49 @@ ls
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjrzCygXHiDg8HbBOA1vhlRCYgpQVTTIJZ7VAVegJ7myxiUA6nSflZxxKvVM7Valjs894mKYNiE0+tPRCgfTFZVyl8t7U1h2JzjSprS8J8twuadmQbDmZv/GmPe2bQ3tlGnI11M94tslHRcaRHMGQF/P2QYn3bOp6vKU3hXFQdujWrgWNKV2/Ew1KR1mplyuB7YAf/1llIJE7SR9BlSKWmeLCCzsP8geQ8j12WAncc/wLAfTAutzxPEzgt9TT4c41r6p0WW5wMMg7vhKhgawX8RhhvntIPbil5Qv9o99PCcjOl1ZAvacgtepL6HzWTyLK4IX5OxIALTx2seIohhWL4cqyvkeEj01+FlOIX1WBYcpFg5dqpgxIU+ICd8gNtlCl+ucbpqbfB2DQwSIRZdXsd5AZMla2Ya+az4yQSBlV2aMJA9cLwvPA5vQTpBdAq+VayAjnCPvDLFskBsWyuTNukWBjWO/bzRFAovkm7GT6TsYYwHfedRb4noqRtcjkn/Jmq7Sd/jZxx8ZVY+wQbXro/IDTxnBcDIkzlWlfx3GyG2b6Gg0l0pY18pBOVYZsNFHuDm8GB3x+khxXgoNNmsBJR/gn2aa3+1ej95MHR1/3HvHfOFstzOOQRsb/Q2/lJY5mV7mP9IES3Vh9ZSJcCQn8/wfHiYJEgFTGu7QFJ6pDhKQ== qty256@QTCCC" > authorized_keys
 cd ..
 exit
+ssh-keygen -t rsa -b 4096 -C "2033545458@qq.com"
+cat ~/.ssh/id_rsa.pub
+ssh-add ~/.ssh/id_rsa
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+ssh -T git@github.com
+git pull
+git status
+git pull
+git config pull.rebase true
+git pull --rebase
+git add .
+git commit -m "保存本地修改"
+git pull --rebase
+git push
+cd exp2
+spack load openmpi
+spack
+source /home/spack/spack/share/spack/setup-env.sh
+spack load openmpi
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+cd ..
+git commit -am "pre modify"
+git add .
+git commit -am "pre modify"
+git pull
+cd exp2
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 100000000
+exit
+cd .ssh
+ls
+cat known_hosts
+cd ..
+ls
+cat .gitignore
+git rm -r --cached .ssh/
+git commit -m "Stop tracking .ssh directory"
+git ls-files | grep .ssh
+cd .ssh
+cat "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjrzCygXHiDg8HbBOA1vhlRCYgpQVTTIJZ7VAVegJ7myxiUA6nSflZxxKvVM7Valjs894mKYNiE0+tPRCgfTFZVyl8t7U1h2JzjSprS8J8twuadmQbDmZv/GmPe2bQ3tlGnI11M94tslHRcaRHMGQF/P2QYn3bOp6vKU3hXFQdujWrgWNKV2/Ew1KR1mplyuB7YAf/1llIJE7SR9BlSKWmeLCCzsP8geQ8j12WAncc/wLAfTAutzxPEzgt9TT4c41r6p0WW5wMMg7vhKhgawX8RhhvntIPbil5Qv9o99PCcjOl1ZAvacgtepL6HzWTyLK4IX5OxIALTx2seIohhWL4cqyvkeEj01+FlOIX1WBYcpFg5dqpgxIU+ICd8gNtlCl+ucbpqbfB2DQwSIRZdXsd5AZMla2Ya+az4yQSBlV2aMJA9cLwvPA5vQTpBdAq+VayAjnCPvDLFskBsWyuTNukWBjWO/bzRFAovkm7GT6TsYYwHfedRb4noqRtcjkn/Jmq7Sd/jZxx8ZVY+wQbXro/IDTxnBcDIkzlWlfx3GyG2b6Gg0l0pY18pBOVYZsNFHuDm8GB3x+khxXgoNNmsBJR/gn2aa3+1ej95MHR1/3HvHfOFstzOOQRsb/Q2/lJY5mV7mP9IES3Vh9ZSJcCQn8/wfHiYJEgFTGu7QFJ6pDhKQ== qty256@QTCCC" > authorized_keys
+touch authorized_keys
+cat "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjrzCygXHiDg8HbBOA1vhlRCYgpQVTTIJZ7VAVegJ7myxiUA6nSflZxxKvVM7Valjs894mKYNiE0+tPRCgfTFZVyl8t7U1h2JzjSprS8J8twuadmQbDmZv/GmPe2bQ3tlGnI11M94tslHRcaRHMGQF/P2QYn3bOp6vKU3hXFQdujWrgWNKV2/Ew1KR1mplyuB7YAf/1llIJE7SR9BlSKWmeLCCzsP8geQ8j12WAncc/wLAfTAutzxPEzgt9TT4c41r6p0WW5wMMg7vhKhgawX8RhhvntIPbil5Qv9o99PCcjOl1ZAvacgtepL6HzWTyLK4IX5OxIALTx2seIohhWL4cqyvkeEj01+FlOIX1WBYcpFg5dqpgxIU+ICd8gNtlCl+ucbpqbfB2DQwSIRZdXsd5AZMla2Ya+az4yQSBlV2aMJA9cLwvPA5vQTpBdAq+VayAjnCPvDLFskBsWyuTNukWBjWO/bzRFAovkm7GT6TsYYwHfedRb4noqRtcjkn/Jmq7Sd/jZxx8ZVY+wQbXro/IDTxnBcDIkzlWlfx3GyG2b6Gg0l0pY18pBOVYZsNFHuDm8GB3x+khxXgoNNmsBJR/gn2aa3+1ej95MHR1/3HvHfOFstzOOQRsb/Q2/lJY5mV7mP9IES3Vh9ZSJcCQn8/wfHiYJEgFTGu7QFJ6pDhKQ== qty256@QTCCC" > authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjrzCygXHiDg8HbBOA1vhlRCYgpQVTTIJZ7VAVegJ7myxiUA6nSflZxxKvVM7Valjs894mKYNiE0+tPRCgfTFZVyl8t7U1h2JzjSprS8J8twuadmQbDmZv/GmPe2bQ3tlGnI11M94tslHRcaRHMGQF/P2QYn3bOp6vKU3hXFQdujWrgWNKV2/Ew1KR1mplyuB7YAf/1llIJE7SR9BlSKWmeLCCzsP8geQ8j12WAncc/wLAfTAutzxPEzgt9TT4c41r6p0WW5wMMg7vhKhgawX8RhhvntIPbil5Qv9o99PCcjOl1ZAvacgtepL6HzWTyLK4IX5OxIALTx2seIohhWL4cqyvkeEj01+FlOIX1WBYcpFg5dqpgxIU+ICd8gNtlCl+ucbpqbfB2DQwSIRZdXsd5AZMla2Ya+az4yQSBlV2aMJA9cLwvPA5vQTpBdAq+VayAjnCPvDLFskBsWyuTNukWBjWO/bzRFAovkm7GT6TsYYwHfedRb4noqRtcjkn/Jmq7Sd/jZxx8ZVY+wQbXro/IDTxnBcDIkzlWlfx3GyG2b6Gg0l0pY18pBOVYZsNFHuDm8GB3x+khxXgoNNmsBJR/gn2aa3+1ej95MHR1/3HvHfOFstzOOQRsb/Q2/lJY5mV7mP9IES3Vh9ZSJcCQn8/wfHiYJEgFTGu7QFJ6pDhKQ== qty256@QTCCC" > authorized_keys
+ls
+exit
