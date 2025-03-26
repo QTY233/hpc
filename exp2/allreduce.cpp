@@ -77,8 +77,11 @@ int main(int argc, char *argv[])
 
     //warmup and check
     MPI_Allreduce(mpi_sendbuf, mpi_recvbuf, n, MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);
+    std::cerr << "check1" << std::endl;
     Naive_Allreduce(naive_sendbuf, naive_recvbuf, n, MPI_COMM_WORLD, comm_sz, my_rank);
+    std::cerr << "check2" << std::endl;
     Ring_Allreduce(ring_sendbuf, ring_recvbuf, n, MPI_COMM_WORLD, comm_sz, my_rank);
+    std::cerr << "check3" << std::endl;
     bool correct = true;
     for (int i = 0; i < n; ++i)
         if (abs(mpi_recvbuf[i] - ring_recvbuf[i]) > EPS)
