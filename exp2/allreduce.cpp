@@ -18,13 +18,13 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     float* temp_buf = new float[step+10]; 
 
     std::memcpy(recvbuf, sendbuf, n * sizeof(float));
-    std::cerr << "step is " << step << "n is " << n << std::endl;
+    // std::cerr << "step is " << step << "n is " << n << std::endl;
 
     for (int i = 0; i < comm_sz - 1; ++i)
     {
         int send_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
         int recv_offset = ((my_rank - i - 1 + comm_sz) % comm_sz) * step;
-        std::cerr << "my_rank is " << my_rank << " i is " << i << " send_offset is " << send_offset << " recv_offset is " << recv_offset << std::endl;
+        // std::cerr << "my_rank is " << my_rank << " i is " << i << " send_offset is " << send_offset << " recv_offset is " << recv_offset << std::endl;
 
         MPI_Request send_req, recv_req;
         MPI_Isend((char*)recvbuf + send_offset * sizeof(float), step, MPI_FLOAT, nxt, 0, comm, &send_req);
@@ -41,7 +41,7 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     {
         int send_offset = ((my_rank - i + 1 + comm_sz) % comm_sz) * step;
         int recv_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
-        std::cerr << "In cycle2: my_rank is " << my_rank << " i is " << i << " send_offset is " << send_offset << " recv_offset is " << recv_offset << std::endl;
+        // std::cerr << "In cycle2: my_rank is " << my_rank << " i is " << i << " send_offset is " << send_offset << " recv_offset is " << recv_offset << std::endl;
 
         MPI_Request send_req, recv_req;
         MPI_Isend((char*)recvbuf + send_offset * sizeof(float), step, MPI_FLOAT, nxt, 0, comm, &send_req);
@@ -49,10 +49,6 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
 
         MPI_Wait(&send_req, MPI_STATUS_IGNORE);
         MPI_Wait(&recv_req, MPI_STATUS_IGNORE);
-        
-        std::cerr << "Rank " << my_rank << " recvbuf after iteration " << i << ": ";
-        for (int j = 0; j < n; j++) std::cerr << ((float*)recvbuf)[j] << " ";
-        std::cerr << std::endl;
     }
 
     delete[] temp_buf;
@@ -90,16 +86,16 @@ int main(int argc, char *argv[])
 
     //warmup and check
     MPI_Allreduce(mpi_sendbuf, mpi_recvbuf, n, MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);
-    std::cerr << "check1" << std::endl;
+    // std::cerr << "check1" << std::endl;
     Naive_Allreduce(naive_sendbuf, naive_recvbuf, n, MPI_COMM_WORLD, comm_sz, my_rank);
-    std::cerr << "check2" << std::endl;
+    // std::cerr << "check2" << std::endl;
     Ring_Allreduce(ring_sendbuf, ring_recvbuf, n, MPI_COMM_WORLD, comm_sz, my_rank);
-    std::cerr << "check3" << std::endl;
+    // std::cerr << "check3" << std::endl;
     bool correct = true;
     for (int i = 0; i < n; ++i)
         if (abs(mpi_recvbuf[i] - ring_recvbuf[i]) > EPS)
         {
-            std::cerr << "wrong i is " << i << " mpi is " << mpi_recvbuf[i] << " ring is " << ring_recvbuf[i] << std::endl;
+            // std::cerr << "wrong i is " << i << " mpi is " << mpi_recvbuf[i] << " ring is " << ring_recvbuf[i] << std::endl;
             correct = false;
             break;
         }
