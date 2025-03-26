@@ -12,41 +12,37 @@ namespace ch = std::chrono;
 
 void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm_sz, int my_rank)
 {
-    //TODO
     float* temp_buf = new float[n];
     int nxt = (my_rank + 1) % comm_sz;
-    int pre = (my_rank + comm_sz - 1) % comm_sz;
+    int pre = (my_rank - 1 + comm_sz) % comm_sz;
     int step = n / comm_sz;
-    int send_offset, recv_offset;
     
     std::memcpy(recvbuf, sendbuf, n * sizeof(float));
-    for (int i = 1; i < comm_sz; ++i) {
-        send_offset = ((my_rank - i + comm_sz + 1) % comm_sz) * step;
-        recv_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
-        std::cerr << "Now in cycle1; i = " << i << " ,  myrank is = " << my_rank << ", send_offset = " << send_offset << ", recv_offset = " << recv_offset << std::endl;
+
+    for (int i = 0; i < comm_sz - 1; ++i) {
+        int send_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
+        int recv_offset = ((my_rank - i - 1 + comm_sz) % comm_sz) * step;
 
         MPI_Sendrecv(static_cast<float*>(recvbuf) + send_offset, step, MPI_FLOAT, nxt, 0,
-            temp_buf, step, MPI_FLOAT, pre, 0, comm, MPI_STATUS_IGNORE);
-
+                     temp_buf, step, MPI_FLOAT, pre, 0, comm, MPI_STATUS_IGNORE);
+        
         for (int j = 0; j < step; ++j) {
             static_cast<float*>(recvbuf)[recv_offset + j] += temp_buf[j];
         }
     }
-    
-    for (int i = 1; i < comm_sz; ++i) {
-        send_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
-        recv_offset = ((my_rank - i + 1 + comm_sz) % comm_sz) * step;
-        std::cerr << "Now in cycle2; i = " << i << " ,  myrank is = " << my_rank << ", send_offset = " << send_offset << ", recv_offset = " << recv_offset << std::endl;
-        
+
+    for (int i = 0; i < comm_sz - 1; ++i) {
+        int send_offset = ((my_rank - i + comm_sz) % comm_sz) * step;
+        int recv_offset = ((my_rank - i - 1 + comm_sz) % comm_sz) * step;
+
         MPI_Sendrecv(static_cast<float*>(recvbuf) + send_offset, step, MPI_FLOAT, nxt, 0,
-            temp_buf, step, MPI_FLOAT, pre, 0, comm, MPI_STATUS_IGNORE);
+                     temp_buf, step, MPI_FLOAT, pre, 0, comm, MPI_STATUS_IGNORE);
 
         std::memcpy(static_cast<float*>(recvbuf) + recv_offset, temp_buf, step * sizeof(float));
     }
-    
+
     delete[] temp_buf;
 }
-
 
 // reduce + bcast
 void Naive_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm_sz, int my_rank)
