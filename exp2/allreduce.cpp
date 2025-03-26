@@ -35,10 +35,6 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
 
         for (int j = 0; j < step; ++j)
             ((float*)recvbuf)[recv_offset + j] += temp_buf[j];
-
-        std::cerr << "Rank " << my_rank << " recvbuf after iteration " << i << ": ";
-        for (int j = 0; j < n; j++) std::cerr << ((float*)recvbuf)[j] << " ";
-        std::cerr << std::endl;
     }
 
     for (int i = 0; i < comm_sz - 1; ++i)
@@ -53,6 +49,10 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
 
         MPI_Wait(&send_req, MPI_STATUS_IGNORE);
         MPI_Wait(&recv_req, MPI_STATUS_IGNORE);
+        
+        std::cerr << "Rank " << my_rank << " recvbuf after iteration " << i << ": ";
+        for (int j = 0; j < n; j++) std::cerr << ((float*)recvbuf)[j] << " ";
+        std::cerr << std::endl;
     }
 
     delete[] temp_buf;
