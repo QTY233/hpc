@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < n; ++i)
         if (abs(mpi_recvbuf[i] - ring_recvbuf[i]) > EPS)
         {
-            std::cerr << "wrong i is " << i << std::endl;
+            std::cerr << "wrong i is " << i << " mpi is " << mpi_recvbuf[i] << " ring is " << ring_recvbuf[i] << std::endl;
             correct = false;
             break;
         }
