@@ -437,3 +437,102 @@ cat "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjrzCygXHiDg8HbBOA1vhlRCYgpQVTTIJZ7VA
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjrzCygXHiDg8HbBOA1vhlRCYgpQVTTIJZ7VAVegJ7myxiUA6nSflZxxKvVM7Valjs894mKYNiE0+tPRCgfTFZVyl8t7U1h2JzjSprS8J8twuadmQbDmZv/GmPe2bQ3tlGnI11M94tslHRcaRHMGQF/P2QYn3bOp6vKU3hXFQdujWrgWNKV2/Ew1KR1mplyuB7YAf/1llIJE7SR9BlSKWmeLCCzsP8geQ8j12WAncc/wLAfTAutzxPEzgt9TT4c41r6p0WW5wMMg7vhKhgawX8RhhvntIPbil5Qv9o99PCcjOl1ZAvacgtepL6HzWTyLK4IX5OxIALTx2seIohhWL4cqyvkeEj01+FlOIX1WBYcpFg5dqpgxIU+ICd8gNtlCl+ucbpqbfB2DQwSIRZdXsd5AZMla2Ya+az4yQSBlV2aMJA9cLwvPA5vQTpBdAq+VayAjnCPvDLFskBsWyuTNukWBjWO/bzRFAovkm7GT6TsYYwHfedRb4noqRtcjkn/Jmq7Sd/jZxx8ZVY+wQbXro/IDTxnBcDIkzlWlfx3GyG2b6Gg0l0pY18pBOVYZsNFHuDm8GB3x+khxXgoNNmsBJR/gn2aa3+1ej95MHR1/3HvHfOFstzOOQRsb/Q2/lJY5mV7mP9IES3Vh9ZSJcCQn8/wfHiYJEgFTGu7QFJ6pDhKQ== qty256@QTCCC" > authorized_keys
 ls
 exit
+ssh-keygen -t rsa -b 4096 -C "2033545458@mail.qq.com"
+cat ~/.ssh/id_rsa.pub
+ssh-add ~/.ssh/id_rsa
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+ssh -T git@github.com
+git pull
+git add .
+git commit -am "??"
+git push
+git pull
+git push
+cd .ssh
+ls
+cd ..
+ls
+cd exp2
+ls
+spack 
+spack load openmpi
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 100000000
+git commit -am "123"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 100000000
+git commit -am "789"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 100000000
+git commit -am "241"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 100000000
+git commit -am "242"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 100000000
+git commit -am "342"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 100000000
+git add .
+git push
+git commit -am "wait"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 100000000
+srun -N 4 -n 4 ./allreduce 10 4
+git pull
+git add .
+git commit -am "wait"
+git push
+git pull
+git push
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 4
+git add .
+git commit -am "wait2"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 4
+git add .
+git commit -am "wait3"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 4
+git add .
+git commit -am "wait4"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 4
+git add .
+git commit -am "wait4"
+git push
+git pull
+mpicxx allreduce.cpp -O3 -std=c++11 -o allreduce
+srun -N 4 -n 4 ./allreduce 10 4
+srun -N 4 -n 4 ./allreduce 10 100000000
+srun -N 4 -n 4 ./allreduce 10 200000000
+srun -N 4 -n 4 ./allreduce 10 10000000
+srun -N 4 -n 4 ./allreduce 5 10000000
+srun -N 4 -n 4 ./allreduce 10 50000000
+srun -N 5 -n 5 ./allreduce 10 50000000
+cd ..
+cp -R /home/course/hpc/assignments/2025/exp3 ~/
+ls
+git add .
+git commit -am "lab3 init"
+git push
