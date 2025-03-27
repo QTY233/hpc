@@ -56,7 +56,7 @@ void prepareRandomParts(int nParts, int *parts) {
 // a out-of-place manner. The i-th part is in range of [parts[i], parts[i + 1])
 void sortEveryUniformParts(int nParts, int *parts) {
     // TODO 1: Parallelize this loop in a proper manner
-    #pragma omp parallel  num_thread(5)
+    #pragma omp parallel num_threads(5)
     #pragma omp for schedule(guided)
     for (int i = 0; i < nParts; i++) {
         std::copy(input + parts[i], input + parts[i + 1], output + parts[i]);
@@ -68,7 +68,7 @@ void sortEveryUniformParts(int nParts, int *parts) {
 // a out-of-place manner. The i-th part is in range of [parts[i], parts[i + 1])
 void sortEveryRandomParts(int nParts, int *parts) {
     // TODO 2: Parallelize this loop in a proper manner
-    #pragma omp parallel  num_thread(5)
+    #pragma omp parallel num_threads(5)
     #pragma omp for schedule(guided)
     for (int i = 0; i < nParts; i++) {
         std::copy(input + parts[i], input + parts[i + 1], output + parts[i]);
