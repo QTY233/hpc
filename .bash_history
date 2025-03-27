@@ -536,3 +536,25 @@ ls
 git add .
 git commit -am "lab3 init"
 git push
+git pull
+cd exp3
+make
+srun -N 1 ./omp_sched
+git add .
+git commit -am "test3 fin"
+git push
+git pull
+make
+srun -N 1 ./omp_sched
+git add .
+git commit -am "test3 fin"
+git push
+git pull
+make
+srun -N 1 ./omp_sched
+git add .
+git commit -am "test3 fin"
+git push
+git pull
+make
+srun -N 1 ./omp_sched
