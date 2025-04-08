@@ -179,10 +179,10 @@ void test_func(int block_size_x, int block_size_y, bool use_shared_memory = 0, b
 int main()
 {
     prepareInput();
-    for (int i = 32; i <= 1024; i += 32) // blockDim.x
+    for (int i = 128; i <= 4096; i += 128) // blockDim.x
         for (int j = 1; j <= 32; ++j)    // blockDim.y
         {
-            if (i * j > 1024)
+            if (i * j > 4096)
                 break;
             test_func(i, j, false, 0); // default: no validation
             test_func(i, j, true, 0);
