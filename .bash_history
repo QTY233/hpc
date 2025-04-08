@@ -590,3 +590,30 @@ git commit -am "test2 finish"
 git push
 git pull
 make
+ls
+git pull
+git commit -am "prepare"
+git push
+git pull
+cp -R /home/course/hpc/assignments/2025/exp4 ~/
+git commit -am "exp4 init"
+git add .
+git commit -am "exp4 init"
+git push
+cd ~/exp4/
+spack load gcc@10.2.0
+spack
+spack load gcc@10.2.0
+spack load cuda@11.1.0
+make
+srun --gpus 1 --exclusive ./run_cuda
+git add .
+git commit -am "1"
+git push
+git pull
+cd exp4
+spack
+spack load gcc@10.2.0
+spack load cuda@11.1.0
+make
+srun --gpus 1 --exclusive ./run_cuda
