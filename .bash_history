@@ -617,3 +617,27 @@ spack load gcc@10.2.0
 spack load cuda@11.1.0
 make
 srun --gpus 1 --exclusive ./run_cuda
+git add .
+git commit -am "pre"
+git push
+git pull
+spack
+spack load gcc@10.2.0
+spack load cuda@11.1.0
+make
+cd exp4
+make
+srun --gpus 1 --exclusive ./run_cuda
+cd ..
+cd data
+cd PA1
+cd data
+ls
+cd ..
+cp -R /home/course/hpc/assignments/2025/exp5 ~/
+cd ~/exp5/
+source /opt/intel/oneapi/setvars.sh
+source run.sh
+cd ~/exp5/
+source /opt/intel/oneapi/setvars.sh
+source run.sh
