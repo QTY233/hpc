@@ -558,3 +558,35 @@ git push
 git pull
 make
 srun -N 1 ./omp_sched
+cp -R /home/course/hpc/assignments/2025/PA1 ~/
+git add .
+git commit -am "PA1 init"
+git push
+exit
+git pull
+git add .
+git commit -m "?!"
+git pull
+git push
+cd exp3
+ls
+make
+ls
+srun -N 1 ./omp_sched
+git add .
+git commit -am "test1 finish"
+git push
+git pull
+make
+srun -N 1 ./omp_sched
+git add .
+git commit -am "test2 finish"
+git push
+git pull
+make
+srun -N 1 ./omp_sched
+git add .
+git commit -am "test2 finish"
+git push
+git pull
+make
