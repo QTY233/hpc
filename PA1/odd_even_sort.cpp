@@ -67,6 +67,7 @@ void Worker::sort() {
                 &receive_num, 1, MPI_INT, rank + 1, 1,
                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         }
+        if (rank == 6) std::cerr << "change num" << std::endl;
 
         if (step & 1) {
             if (rank & 1) {
@@ -89,6 +90,7 @@ void Worker::sort() {
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             }
         }
+        if (rank == 6) std::cerr << "change data" << std::endl;
 
         if ((rank + step) & 1) {
             size_t i = 0, j = block_len - receive_num, k = 0;
@@ -109,6 +111,7 @@ void Worker::sort() {
             while (j < (size_t)receive_num) sorted_data[k++] = temp_data[j++];
             std::copy(sorted_data, sorted_data + send_num, data_int + block_len - send_num);
         }
+        if (rank == 6) std::cerr << "sort" << std::endl;
     }
     for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
     delete[] data_int;
