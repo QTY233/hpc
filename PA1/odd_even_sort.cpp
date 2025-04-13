@@ -3,15 +3,14 @@
 #include <cstdio>
 #include <cstdlib>
 #include <mpi.h>
-#include <vector>
 
 #include "worker.h"
 
 void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
-    std::vector<float> temp_data(block_len);
-    std::vector<float> sorted_data(block_len << 1);
-    for (int step = 0; step < nprocs; ++step) {
+    float* temp_data = new float[block_len];
+    float* sorted_data = new float[block_len << 1];
+    for (size_t step = 0; step < nprocs; ++step) {
         if (step == 0) std::sort(data, data + block_len);
         if (step & 1) {
             if (rank & 1) {
@@ -77,6 +76,8 @@ void Worker::sort() {
             }
         }
     }
+    delete[] temp_data;
+    delete[] sorted_data;
 }
 /*private:
     int nprocs, rank;
