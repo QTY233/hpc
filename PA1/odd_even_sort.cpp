@@ -7,16 +7,16 @@
 
 #include "worker.h"
 
-inline int floatToInt(float x) {
-    int i;
-    std::memcpy(&i, &x, sizeof(float));
-    return i >= 0 ? i : ~i;
+unsigned float_to_uint(float f) {
+    unsigned u;
+    memcpy(&u, &f, sizeof(float));
+    return (u & 0x80000000) ? ~u : (u ^ 0x80000000);
 }
 
-float IntToFloat(int ordered) {
-    int i = (ordered >= 0) ? ordered : ~ordered;
+float uint_to_float(unsigned u) {
+    u = (u & 0x80000000) ? (u ^ 0x80000000) : ~u;
     float f;
-    std::memcpy(&f, &i, sizeof(float));
+    memcpy(&f, &u, sizeof(float));
     return f;
 }
 
@@ -25,10 +25,10 @@ void Worker::sort() {
     if (out_of_range) return;
     int max_block_len = n / nprocs + (n % nprocs > 0 ? 1 : 0);
     // std::cerr << n << " " << nprocs << " " << block_len << " " << max_block_len << std::endl;
-    int* data_int = new int[max_block_len];
-    int* temp_data = new int[max_block_len];
-    int* sorted_data = new int[max_block_len << 1];
-    for (size_t i = 0; i < block_len; ++i) data_int[i] = floatToInt(data[i]);
+    unsigned* data_int = new unsigned[max_block_len];
+    unsigned* temp_data = new unsigned[max_block_len];
+    unsigned* sorted_data = new unsigned[max_block_len << 1];
+    for (size_t i = 0; i < block_len; ++i) data_int[i] = float_to_uint(data[i]);
     std::sort(data_int, data_int + block_len);
 
     for (int step = 0; step < nprocs; ++step) {
@@ -114,7 +114,7 @@ void Worker::sort() {
         }
         // if (rank == 6) std::cerr << "sort" << std::endl;
     }
-    for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
+    for (size_t i = 0; i < block_len; ++i) data[i] = uint_to_float(data_int[i]);
     delete[] data_int;
     delete[] temp_data;
     delete[] sorted_data;
