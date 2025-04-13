@@ -35,10 +35,10 @@ void Worker::sort() {
         memset(count, 0, sizeof(count));
         for (size_t i = 0; i < block_len; ++i) 
             count[(data_int[i] >> (pass * 8)) & 0xFF]++;
-        for (int i = 1; i < base; ++i) 
+        for (int i = 1; i < 256; ++i) 
             count[i] += count[i - 1];
         for (ssize_t i = block_len - 1; i >= 0; --i) 
-            temp_data[--count[(arr[i] >> (pass * 8)) & 0xFF]] = data_int[i];
+            temp_data[--count[(data_int[i] >> (pass * 8)) & 0xFF]] = data_int[i];
         memcpy(arr, temp_data, block_len * sizeof(unsigned int));
     }
 
