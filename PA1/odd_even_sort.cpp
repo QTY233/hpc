@@ -47,8 +47,6 @@ void Worker::sort() {
                     send_num = mid;
                 } else r = mid - 1;
             }
-            std::cerr << "step " << step << " rank " << rank << " send_num " << send_num << " data_int[send_num] " << data_int[send_num] 
-                      << " temp_data[block_len - 1] " << temp_data[block_len - 1] << std::endl;
             MPI_Sendrecv(&send_num, 1, MPI_INT, rank - 1, 1,
                 &receive_num, 1, MPI_INT, rank - 1, 1,
                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
@@ -112,6 +110,9 @@ void Worker::sort() {
             while (j < receive_num) sorted_data[k++] = temp_data[j++];
             std::copy(sorted_data, sorted_data + send_num, data_int + block_len - send_num);
         }
+        std::cerr << "rank " << rank << " step " << step << ": ";
+        for (int i = 0; i < block_len; ++i) std::cerr << data_int[i] << " ";
+        std::cerr << std::endl;
     }
     for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
     delete[] data_int;
