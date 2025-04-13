@@ -39,7 +39,7 @@ void Worker::sort() {
             count[i] += count[i - 1];
         for (ssize_t i = block_len - 1; i >= 0; --i) 
             temp_data[--count[(data_int[i] >> (pass * 8)) & 0xFF]] = data_int[i];
-        memcpy(arr, temp_data, block_len * sizeof(unsigned int));
+        memcpy(data_int, temp_data, block_len * sizeof(unsigned int));
     }
 
     for (int step = 0; step < nprocs; ++step) {
