@@ -31,15 +31,26 @@ void Worker::sort() {
         if (step == 0)  {
             std::sort(data_int, data_int + block_len);
         }
+        if ((rank + step) & 1) {
+            if (!rank) continue;
+            MPI_Sendrecv(data_int, 1, MPI_INT, rank + 1, 2,
+                temp_data + block_len - 1, 1, MPI_INT, rank + 1, 2,
+                MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            if (data_int[0] >= temp_data[block_len - 1]) continue;
+        } else {
+            if (last_rank) continue;
+            MPI_Sendrecv(data_int + block_len - 1, 1, MPI_INT, rank - 1, 2,
+                temp_data, 1, MPI_INT, rank - 1, 2,
+                MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            if (temp_data[0] >= data_int[block_len - 1]) continue;
+        }
 
         if (step & 1) {
             if (rank & 1) {
-                if (last_rank) continue;
                 MPI_Sendrecv(data_int, block_len, MPI_INT, rank + 1, 0,
                     temp_data, block_len, MPI_INT, rank + 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             } else {
-                if (!rank) continue;
                 MPI_Sendrecv(data_int, block_len, MPI_INT, rank - 1, 0,
                     temp_data, block_len, MPI_INT, rank - 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
@@ -50,7 +61,6 @@ void Worker::sort() {
                     temp_data, block_len, MPI_INT, rank - 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             } else {
-                if (last_rank) continue;
                 MPI_Sendrecv(data_int, block_len, MPI_INT, rank + 1, 0,
                     temp_data, block_len, MPI_INT, rank + 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
