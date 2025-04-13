@@ -27,9 +27,9 @@ void Worker::sort() {
     int* sorted_data = new int[block_len << 1];
     for (size_t i = 0; i < block_len; ++i) data_int[i] = floatToInt(data[i]);
     std::sort(data_int, data_int + block_len);
-    std::cerr << "before sort between each one, rank " << rank << ": ";
-    for (size_t i = 0; i < block_len; ++i) std::cerr << data_int[i] << " ";
-    std::cerr << std::endl;
+    // std::cerr << "before sort between each one, rank " << rank << ": ";
+    // for (size_t i = 0; i < block_len; ++i) std::cerr << data_int[i] << " ";
+    // std::cerr << std::endl;
 
     for (int step = 0; step < nprocs; ++step) {
         size_t send_num = 1, receive_num;
@@ -68,6 +68,8 @@ void Worker::sort() {
                 &receive_num, 1, MPI_INT, rank + 1, 1,
                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         }
+        std::cerr << "rank " << rank << " step " << step << ": ";
+        std::cerr << "send_num " << send_num << " receive_num " << receive_num << std::endl;
 
         if (step & 1) {
             if (rank & 1) {
@@ -110,9 +112,9 @@ void Worker::sort() {
             while (j < receive_num) sorted_data[k++] = temp_data[j++];
             std::copy(sorted_data, sorted_data + send_num, data_int + block_len - send_num);
         }
-        std::cerr << "rank " << rank << " step " << step << ": ";
-        for (size_t i = 0; i < block_len; ++i) std::cerr << data_int[i] << " ";
-        std::cerr << std::endl;
+        // std::cerr << "rank " << rank << " step " << step << ": ";
+        // for (size_t i = 0; i < block_len; ++i) std::cerr << data_int[i] << " ";
+        // std::cerr << std::endl;
     }
     for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
     delete[] data_int;
