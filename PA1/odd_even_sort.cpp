@@ -28,6 +28,9 @@ void Worker::sort() {
     int* data_int = new int[max_block_len];
     int* temp_data = new int[max_block_len];
     int* sorted_data = new int[max_block_len << 1];
+    if (rank == 6) std::cerr << "Deleting data_int at: " << static_cast<void*>(data_int) << std::endl;
+    if (rank == 6) std::cerr << "Deleting temp_data at: " << static_cast<void*>(temp_data) << std::endl;
+    if (rank == 6) std::cerr << "Deleting sorted_data at: " << static_cast<void*>(sorted_data) << std::endl;
     // for (size_t i = 0; i < (size_t)max_block_len; ++i) data_int[i] = temp_data[i] = 0;
     // for (size_t i = 0; i < (size_t)max_block_len * 2; ++i) sorted_data[i] = 0;
     for (size_t i = 0; i < block_len; ++i) data_int[i] = floatToInt(data[i]);
@@ -117,9 +120,18 @@ void Worker::sort() {
         // if (rank == 6) std::cerr << "sort" << std::endl;
     }
     for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
-    if (data_int != nullptr) delete[] data_int;
-    if (temp_data != nullptr) delete[] temp_data;
-    if (sorted_data != nullptr) delete[] sorted_data;
+    if (data_int != nullptr) {
+        if (rank == 6) std::cerr << "Deleting data_int at: " << static_cast<void*>(data_int) << std::endl;
+        delete[] data_int;
+    }
+    if (temp_data != nullptr) {
+        if (rank == 6) std::cerr << "Deleting temp_data at: " << static_cast<void*>(temp_data) << std::endl;
+        delete[] temp_data;
+    }
+    if (sorted_data != nullptr) {
+        if (rank == 6) std::cerr << "Deleting sorted_data at: " << static_cast<void*>(sorted_data) << std::endl;
+        delete[] sorted_data;
+    }
 }
 /*private:
     int nprocs, rank;
