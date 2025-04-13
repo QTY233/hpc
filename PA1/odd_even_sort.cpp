@@ -22,6 +22,7 @@ float IntToFloat(int ordered) {
 
 void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
+    if (out_of_range) return;
     int max_block_len = n / nprocs + 1;
     std::cerr << n << " " << nprocs << " " << block_len << " " << max_block_len << std::endl;
     int* data_int = new int[max_block_len];
@@ -115,8 +116,11 @@ void Worker::sort() {
     }
     for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
     delete[] data_int;
+    if (rank == 6) std::cerr << "data_int" << std::endl;
     delete[] temp_data;
+    if (rank == 6) std::cerr << "temp_data" << std::endl;
     delete[] sorted_data;
+    if (rank == 6) std::cerr << "sorted_data" << std::endl;
 }
 /*private:
     int nprocs, rank;
