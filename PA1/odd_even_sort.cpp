@@ -32,8 +32,7 @@ void Worker::sort() {
             std::sort(data_int, data_int + block_len);
         }
 
-        int send_num = 1;
-        int receive_num;
+        size_t send_num = 1, receive_num;
         if ((rank + step) & 1) {
             if (!rank) continue;
             MPI_Sendrecv(data_int, 1, MPI_INT, rank - 1, 2,
