@@ -24,12 +24,12 @@ void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
     if (out_of_range) return;
     int max_block_len = n / nprocs + 1;
-    std::cerr << n << " " << nprocs << " " << block_len << " " << max_block_len << std::endl;
+    // std::cerr << n << " " << nprocs << " " << block_len << " " << max_block_len << std::endl;
     int* data_int = new int[max_block_len];
     int* temp_data = new int[max_block_len];
     int* sorted_data = new int[max_block_len << 1];
-    for (size_t i = 0; i < (size_t)max_block_len; ++i) data_int[i] = temp_data[i] = 0;
-    for (size_t i = 0; i < (size_t)max_block_len * 2; ++i) sorted_data[i] = 0;
+    // for (size_t i = 0; i < (size_t)max_block_len; ++i) data_int[i] = temp_data[i] = 0;
+    // for (size_t i = 0; i < (size_t)max_block_len * 2; ++i) sorted_data[i] = 0;
     for (size_t i = 0; i < block_len; ++i) data_int[i] = floatToInt(data[i]);
     std::sort(data_int, data_int + block_len);
 
@@ -70,7 +70,7 @@ void Worker::sort() {
                 &receive_num, 1, MPI_INT, rank + 1, 1,
                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         }
-        if (rank == 6) std::cerr << "change num" << std::endl;
+        // if (rank == 6) std::cerr << "change num" << std::endl;
 
         if (step & 1) {
             if (rank & 1) {
@@ -93,7 +93,7 @@ void Worker::sort() {
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             }
         }
-        if (rank == 6) std::cerr << "change data" << std::endl;
+        // if (rank == 6) std::cerr << "change data" << std::endl;
 
         if ((rank + step) & 1) {
             size_t i = 0, j = block_len - receive_num, k = 0;
@@ -114,15 +114,12 @@ void Worker::sort() {
             while (j < (size_t)receive_num) sorted_data[k++] = temp_data[j++];
             std::copy(sorted_data, sorted_data + send_num, data_int + block_len - send_num);
         }
-        if (rank == 6) std::cerr << "sort" << std::endl;
+        // if (rank == 6) std::cerr << "sort" << std::endl;
     }
     for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
-    delete[] data_int;
-    if (rank == 6) std::cerr << "data_int" << std::endl;
-    delete[] temp_data;
-    if (rank == 6) std::cerr << "temp_data" << std::endl;
-    delete[] sorted_data;
-    if (rank == 6) std::cerr << "sorted_data" << std::endl;
+    if (data_int != nullptr) delete[] data_int;
+    if (temp_data != nullptr) delete[] temp_data;
+    if (sorted_data != nullptr) delete[] sorted_data;
 }
 /*private:
     int nprocs, rank;
