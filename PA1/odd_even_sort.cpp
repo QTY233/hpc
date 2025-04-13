@@ -22,8 +22,8 @@ float IntToFloat(int ordered) {
 void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
     int* data_int = new int[block_len];
-    int* temp_data = new float[block_len];
-    int* sorted_data = new float[block_len << 1];
+    int* temp_data = new int[block_len];
+    int* sorted_data = new int[block_len << 1];
     for (size_t i = 0; i < block_len; ++i) data_int[i] = floatToInt(data[i]);
         
     for (int step = 0; step < nprocs; ++step) {
