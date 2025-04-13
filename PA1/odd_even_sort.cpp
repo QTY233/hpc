@@ -10,7 +10,7 @@ void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
     float* temp_data = new float[block_len];
     float* sorted_data = new float[block_len << 1];
-    for (size_t step = 0; step < nprocs; ++step) {
+    for (int step = 0; step < nprocs; ++step) {
         if (step == 0) std::sort(data, data + block_len);
         if (step & 1) {
             if (rank & 1) {
