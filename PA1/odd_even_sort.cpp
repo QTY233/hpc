@@ -68,8 +68,8 @@ void Worker::sort() {
                 &receive_num, 1, MPI_INT, rank + 1, 1,
                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         }
-        // std::cerr << "rank " << rank << " step " << step << ": ";
-        // std::cerr << "send_num " << send_num << " receive_num " << receive_num << std::endl;
+        std::cerr << "rank " << rank << " step " << step << ": ";
+        std::cerr << "send_num " << send_num << " receive_num " << receive_num << std::endl;
 
         if (step & 1) {
             if (rank & 1) {
