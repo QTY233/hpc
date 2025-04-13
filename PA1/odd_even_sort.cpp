@@ -23,8 +23,8 @@ float IntToFloat(int ordered) {
 void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
     if (out_of_range) return;
-    int max_block_len = n / nprocs + 1;
-    std::cerr << n << " " << nprocs << " " << block_len << " " << max_block_len << std::endl;
+    int max_block_len = n / nprocs + (n % nprocs > 0 ? 1 : 0);
+    // std::cerr << n << " " << nprocs << " " << block_len << " " << max_block_len << std::endl;
     int* data_int = new int[max_block_len];
     int* temp_data = new int[max_block_len];
     int* sorted_data = new int[max_block_len << 1];
@@ -94,13 +94,13 @@ void Worker::sort() {
         // if (rank == 6) std::cerr << "change data" << std::endl;
 
         if ((rank + step) & 1) {
-            size_t i = 0, j = block_len - receive_num, k = 0;
-            while (i < (size_t)send_num && j < block_len) {
+            size_t i = 0, j = max_block_len - receive_num, k = 0;
+            while (i < (size_t)send_num && j < (size_t)max_block_len) {
                 if (data_int[i] < temp_data[j]) sorted_data[k++] = data_int[i++];
                 else sorted_data[k++] = temp_data[j++];
             }
             while (i < (size_t)send_num) sorted_data[k++] = data_int[i++];
-            while (j < block_len) sorted_data[k++] = temp_data[j++];
+            while (j < (size_t)max_block_len) sorted_data[k++] = temp_data[j++];
             std::copy(sorted_data + receive_num, sorted_data + receive_num + send_num, data_int);
         } else {
             size_t i = block_len - send_num, j = 0, k = 0;
@@ -115,18 +115,9 @@ void Worker::sort() {
         // if (rank == 6) std::cerr << "sort" << std::endl;
     }
     for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
-    if (data_int != nullptr) {
-        delete[] data_int;
-        data_int = nullptr;
-    }
-    if (temp_data != nullptr) {
-        delete[] temp_data;
-        temp_data = nullptr;
-    }
-    if (sorted_data != nullptr) {
-        delete[] sorted_data;
-        sorted_data = nullptr;
-    }
+    delete[] data_int;
+    delete[] temp_data;
+    delete[] sorted_data;
 }
 /*private:
     int nprocs, rank;
