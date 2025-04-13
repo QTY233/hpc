@@ -3,12 +3,14 @@
 #include <cstdio>
 #include <cstdlib>
 #include <mpi.h>
+#include <vector>
 
 #include "worker.h"
 
 void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
-    float temp_data[block_len], sorted_data[block_len << 1];
+    std::vector<float> temp_data(block_len);
+    std::vector<float> sorted_data(block_len << 1);
     for (int step = 0; step < nprocs; ++step) {
         if (step == 0) std::sort(data, data + block_len);
         if (step & 1) {
@@ -17,7 +19,7 @@ void Worker::sort() {
                     temp_data, block_len, MPI_FLOAT, rank + 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
                 if (temp_data[0] < data[block_len - 1]) {
-                    int i = 0, j = 0, k = 0;
+                    size_t i = 0, j = 0, k = 0;
                     while (i < block_len && j < block_len) {
                         if (data[i] < temp_data[j]) sorted_data[k++] = data[i++];
                         else sorted_data[k++] = temp_data[j++];
@@ -32,7 +34,7 @@ void Worker::sort() {
                     temp_data, block_len, MPI_FLOAT, rank - 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
                 if (data[0] < temp_data[block_len - 1]) {
-                    int i = 0, j = 0, k = 0;
+                    size_t i = 0, j = 0, k = 0;
                     while (i < block_len && j < block_len) {
                         if (data[i] < temp_data[j]) sorted_data[k++] = data[i++];
                         else sorted_data[k++] = temp_data[j++];
@@ -48,7 +50,7 @@ void Worker::sort() {
                     temp_data, block_len, MPI_FLOAT, rank - 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
                 if (data[0] < temp_data[block_len - 1]) {
-                    int i = 0, j = 0, k = 0;
+                    size_t i = 0, j = 0, k = 0;
                     while (i < block_len && j < block_len) {
                         if (data[i] < temp_data[j]) sorted_data[k++] = data[i++];
                         else sorted_data[k++] = temp_data[j++];
@@ -63,7 +65,7 @@ void Worker::sort() {
                     temp_data, block_len, MPI_FLOAT, rank + 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
                 if (temp_data[0] < data[block_len - 1]) {
-                    int i = 0, j = 0, k = 0;
+                    size_t i = 0, j = 0, k = 0;
                     while (i < block_len && j < block_len) {
                         if (data[i] < temp_data[j]) sorted_data[k++] = data[i++];
                         else sorted_data[k++] = temp_data[j++];
