@@ -77,13 +77,13 @@ void Worker::sort() {
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             } else {
                 MPI_Sendrecv(data_int, send_num, MPI_INT, rank - 1, 0,
-                    temp_data + block_len - receive_num, receive_num, MPI_INT, rank - 1, 0,
+                    temp_data, receive_num, MPI_INT, rank - 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             }
         } else {
             if (rank & 1) {
                 MPI_Sendrecv(data_int, send_num, MPI_INT, rank - 1, 0,
-                    temp_data + block_len - receive_num, receive_num, MPI_INT, rank - 1, 0,
+                    temp_data, receive_num, MPI_INT, rank - 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             } else {
                 MPI_Sendrecv(data_int + block_len - send_num, send_num, MPI_INT, rank + 1, 0,
@@ -94,13 +94,13 @@ void Worker::sort() {
         // if (rank == 6) std::cerr << "change data" << std::endl;
 
         if ((rank + step) & 1) {
-            size_t i = 0, j = max_block_len - receive_num, k = 0;
-            while (i < (size_t)send_num && j < (size_t)max_block_len) {
+            size_t i = 0, j = 0, k = 0;
+            while (i < (size_t)send_num && j < (size_t)receive_num) {
                 if (data_int[i] < temp_data[j]) sorted_data[k++] = data_int[i++];
                 else sorted_data[k++] = temp_data[j++];
             }
             while (i < (size_t)send_num) sorted_data[k++] = data_int[i++];
-            while (j < (size_t)max_block_len) sorted_data[k++] = temp_data[j++];
+            while (j < (size_t)receive_num) sorted_data[k++] = temp_data[j++];
             std::copy(sorted_data + receive_num, sorted_data + receive_num + send_num, data_int);
         } else {
             size_t i = block_len - send_num, j = 0, k = 0;
