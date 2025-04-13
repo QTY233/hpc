@@ -111,7 +111,7 @@ void Worker::sort() {
             std::copy(sorted_data, sorted_data + send_num, data_int + block_len - send_num);
         }
         std::cerr << "rank " << rank << " step " << step << ": ";
-        for (int i = 0; i < block_len; ++i) std::cerr << data_int[i] << " ";
+        for (size_t i = 0; i < block_len; ++i) std::cerr << data_int[i] << " ";
         std::cerr << std::endl;
     }
     for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
