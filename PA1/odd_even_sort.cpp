@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <mpi.h>
+#include <cstring>
 
 #include "worker.h"
 
