@@ -24,12 +24,10 @@ void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
     if (out_of_range) return;
     int max_block_len = n / nprocs + 1;
-    // std::cerr << n << " " << nprocs << " " << block_len << " " << max_block_len << std::endl;
+    std::cerr << n << " " << nprocs << " " << block_len << " " << max_block_len << std::endl;
     int* data_int = new int[max_block_len];
     int* temp_data = new int[max_block_len];
     int* sorted_data = new int[max_block_len << 1];
-    // for (size_t i = 0; i < (size_t)max_block_len; ++i) data_int[i] = temp_data[i] = 0;
-    // for (size_t i = 0; i < (size_t)max_block_len * 2; ++i) sorted_data[i] = 0;
     for (size_t i = 0; i < block_len; ++i) data_int[i] = floatToInt(data[i]);
     std::sort(data_int, data_int + block_len);
 
