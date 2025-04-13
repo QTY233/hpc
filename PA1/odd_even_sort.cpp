@@ -47,7 +47,7 @@ void Worker::sort() {
                     send_num = mid;
                 } else r = mid - 1;
             }
-            std::cerr << "step " << step << " rank " << rank << " send_num " << send_num << " data_int[mid] " << data_int[mid] << std::endl;
+            std::cerr << "step " << step << " rank " << rank << " send_num " << send_num << " data_int[send_num] " << data_int[send_num] << std::endl;
             MPI_Sendrecv(&send_num, 1, MPI_INT, rank - 1, 1,
                 &receive_num, 1, MPI_INT, rank - 1, 1,
                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
