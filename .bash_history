@@ -641,3 +641,9 @@ source run.sh
 cd ~/exp5/
 source /opt/intel/oneapi/setvars.sh
 source run.sh
+git commit -am "exp5 init"
+git push
+ls
+git add .
+git commit -am "exp5 init"
+git push
