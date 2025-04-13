@@ -647,3 +647,57 @@ ls
 git add .
 git commit -am "exp5 init"
 git push
+ls
+git pull
+git add .
+git commit -m "before pull"
+git push
+git pull
+ls
+cd PA1
+ls
+cd data
+ls
+cd ..
+spike
+spack
+spack load openmpi
+make -j4
+cd ..
+cd PA1
+cd ..
+git add .
+git commit -am "pre"
+git push
+git pull
+cd PA1
+ls
+make -j4、
+make -j4
+git add .
+git commit -am "123"
+git pull
+make -j4
+git pull
+make -j4
+ls
+srun -n 4 ./odd_even_sort 256 ./data/256.dat
+srun -n 4 ./odd_even_sort 256 ./data/100.dat
+git add /
+git add .
+git commit -am "after compile"
+git push
+git pull
+make -j4
+srun -n 4 ./odd_even_sort 256 ./data/100.dat
+srun -n 4 ./odd_even_sort 256 ./data/10000.dat
+srun -n 4 ./odd_even_sort 256 ./data/1000000.dat
+srun -n 4 ./odd_even_sort 256 ./data/100000000.dat
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+srun -n 10 ./odd_even_sort 10000 ./data/10000.dat
+srun -n 20 ./odd_even_sort 1000000 ./data/1000000.dat
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+cd data
+ls
+cd ..
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
