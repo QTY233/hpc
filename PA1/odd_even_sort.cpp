@@ -26,12 +26,12 @@ void Worker::sort() {
     int* temp_data = new int[block_len];
     int* sorted_data = new int[block_len << 1];
     for (size_t i = 0; i < block_len; ++i) data_int[i] = floatToInt(data[i]);
-        
-    for (int step = 0; step < nprocs; ++step) {
-        if (step == 0)  {
-            std::sort(data_int, data_int + block_len);
-        }
+    std::sort(data_int, data_int + block_len);
+    std::cerr << "before sort between each one, rank " << rank << ": ";
+    for (size_t i = 0; i < block_len; ++i) std::cerr << data_int[i] << " ";
+    std::cerr << std::endl;
 
+    for (int step = 0; step < nprocs; ++step) {
         size_t send_num = 1, receive_num;
         if ((rank + step) & 1) {
             if (!rank) continue;
