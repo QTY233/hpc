@@ -14,6 +14,7 @@ void Worker::sort() {
         if (step == 0) std::sort(data, data + block_len);
         if (step & 1) {
             if (rank & 1) {
+                if (last_rank) continue;
                 MPI_Sendrecv(data, block_len, MPI_FLOAT, rank + 1, 0,
                     temp_data, block_len, MPI_FLOAT, rank + 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
