@@ -101,7 +101,7 @@ void Worker::sort() {
             }
             while (i < (size_t)send_num) sorted_data[k++] = data_int[i++];
             while (j < (size_t)receive_num) sorted_data[k++] = temp_data[j++];
-            std::copy(sorted_data + receive_num, sorted_data + receive_num + send_num, data_int);
+            std::memcpy(data_int, sorted_data + receive_num, send_num * sizeof(unsigned));
         } else {
             size_t i = block_len - send_num, j = 0, k = 0;
             while (i < block_len && j < (size_t)receive_num) {
@@ -110,7 +110,7 @@ void Worker::sort() {
             }
             while (i < block_len) sorted_data[k++] = data_int[i++];
             while (j < (size_t)receive_num) sorted_data[k++] = temp_data[j++];
-            std::copy(sorted_data, sorted_data + send_num, data_int + block_len - send_num);
+            std::memcpy(data_int + (block_len - send_num), sorted_data, send_num * sizeof(unsigned));
         }
         // if (rank == 6) std::cerr << "sort" << std::endl;
     }
