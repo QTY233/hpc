@@ -701,3 +701,75 @@ cd data
 ls
 cd ..
 srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+cd PA1
+git add .
+git commit -am "pre"
+git push
+git pull
+spack load openmpi
+spack
+spack load openmpi
+make -j4
+srun -n 20 ./odd_even_sort 1000000 ./1000000.dat
+srun -n 20 ./odd_even_sort 100 ./100.dat
+srun -n 4 ./odd_even_sort 100 ./100.dat
+git pull
+git add .
+git commit "pre"
+git commit -m "pre"
+git pull
+make -j4
+git push
+srun -n 4 ./odd_even_sort 100 ./100.dat
+make clean
+make -j4
+srun -n 4 ./odd_even_sort 100 ./100.dat
+git pull
+git commit -m "pre"
+git add .
+git commit -am "123"
+git push
+git pull
+git push
+make -j4
+make clean
+make -j4
+srun -n 4 ./odd_even_sort 100 ./100.dat
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+srun -n 4 ./odd_even_sort 1000000 ./data/1000000.dat
+git add .
+git commit -am  "pre"
+git push
+git pull
+make clean
+make -j4
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+srun -n 4 ./odd_even_sort 1000000 ./data/1000000.dat
+srun -n 4 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+git commit -am "123"
+git pull
+git push
+make clean
+make -j4
+git commit -am "123"
+git push
+git pull
+make -j4
+git pull
+make -j4
+git pull
+make -j4
+git pull
+make -j4
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+srun -n 20 ./odd_even_sort 1000000 ./data/1000000.dat
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+make -j4
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
