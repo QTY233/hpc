@@ -61,7 +61,7 @@ void Worker::sort() {
                 mid = (l + r) >> 1;
                 if (temp_data[0] < data_int[mid - 1]) {
                     r = mid - 1;
-                    send_num = mid;
+                    send_num = block_len - mid + 1;
                 } else l = mid + 1;
             }
             MPI_Sendrecv(&send_num, 1, MPI_INT, rank + 1, 1,
