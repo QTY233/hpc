@@ -28,7 +28,7 @@ void Worker::sort() {
         
     for (int step = 0; step < nprocs; ++step) {
         if (step == 0)  {
-            sort(data_int, data_int + block_len);
+            std::sort(data_int, data_int + block_len);
         }
 
         if (step & 1) {
