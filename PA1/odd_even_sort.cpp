@@ -34,24 +34,24 @@ void Worker::sort() {
         if (step & 1) {
             if (rank & 1) {
                 if (last_rank) continue;
-                MPI_Sendrecv(data_int, block_len, MPI_FLOAT, rank + 1, 0,
-                    temp_data, block_len, MPI_FLOAT, rank + 1, 0,
+                MPI_Sendrecv(data_int, block_len, MPI_INT, rank + 1, 0,
+                    temp_data, block_len, MPI_INT, rank + 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             } else {
                 if (!rank) continue;
-                MPI_Sendrecv(data_int, block_len, MPI_FLOAT, rank - 1, 0,
-                    temp_data, block_len, MPI_FLOAT, rank - 1, 0,
+                MPI_Sendrecv(data_int, block_len, MPI_INT, rank - 1, 0,
+                    temp_data, block_len, MPI_INT, rank - 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             }
         } else {
             if (rank & 1) {
-                MPI_Sendrecv(data_int, block_len, MPI_FLOAT, rank - 1, 0,
-                    temp_data, block_len, MPI_FLOAT, rank - 1, 0,
+                MPI_Sendrecv(data_int, block_len, MPI_INT, rank - 1, 0,
+                    temp_data, block_len, MPI_INT, rank - 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             } else {
                 if (last_rank) continue;
-                MPI_Sendrecv(data_int, block_len, MPI_FLOAT, rank + 1, 0,
-                    temp_data, block_len, MPI_FLOAT, rank + 1, 0,
+                MPI_Sendrecv(data_int, block_len, MPI_INT, rank + 1, 0,
+                    temp_data, block_len, MPI_INT, rank + 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
             }
         }
@@ -80,9 +80,7 @@ void Worker::sort() {
             }
         }
     }
-    for (size_t i = 0; i < block_len; ++i) {
-        data[i] = IntToFloat(data_int[i]);
-    }
+    for (size_t i = 0; i < block_len; ++i) data[i] = IntToFloat(data_int[i]);
     delete[] data_int;
     delete[] temp_data;
     delete[] sorted_data;
