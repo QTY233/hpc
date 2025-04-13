@@ -29,7 +29,18 @@ void Worker::sort() {
     unsigned* temp_data = new unsigned[max_block_len];
     unsigned* sorted_data = new unsigned[max_block_len << 1];
     for (size_t i = 0; i < block_len; ++i) data_int[i] = float_to_uint(data[i]);
-    std::sort(data_int, data_int + block_len);
+    // std::sort(data_int, data_int + block_len);
+    size_t count[256];
+    for (int pass = 0; pass < 4; ++pass) {
+        memset(count, 0, sizeof(count));
+        for (size_t i = 0; i < block_len; ++i) 
+            count[(data_int[i] >> (pass * 8)) & 0xFF]++;
+        for (int i = 1; i < base; ++i) 
+            count[i] += count[i - 1];
+        for (ssize_t i = block_len - 1; i >= 0; --i) 
+            temp_data[--count[(arr[i] >> (pass * 8)) & 0xFF]] = data_int[i];
+        memcpy(arr, temp_data, block_len * sizeof(unsigned int));
+    }
 
     for (int step = 0; step < nprocs; ++step) {
         int send_num = 1, receive_num;
