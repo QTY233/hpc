@@ -28,6 +28,8 @@ void Worker::sort() {
     int* data_int = new int[max_block_len];
     int* temp_data = new int[max_block_len];
     int* sorted_data = new int[max_block_len << 1];
+    for (size_t i = 0; i < max_block_len; ++i) data_int[i] = temp_data[i] = 0;
+    for (size_t i = 0; i < max_block_len * 2; ++i) sorted_data[i] = 0;
     for (size_t i = 0; i < block_len; ++i) data_int[i] = floatToInt(data[i]);
     std::sort(data_int, data_int + block_len);
 
