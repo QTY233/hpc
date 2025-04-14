@@ -773,3 +773,162 @@ git pull
 make -j4
 srun -n 20 ./odd_even_sort 100 ./data/100.dat
 srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+cd PA1
+spack
+spack load openmpi
+make -j4
+git pull
+make clean
+make -j4
+srun -n 5 ./odd_even_sort 100 ./data/100.dat
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+make clean
+git pull
+git commit -am "123"
+git pull
+git push
+make -j4
+srun -n 5 ./odd_even_sort 100 ./data/100.dat
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+srun -n 50 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+make -j4
+srun -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+make -j4
+srun -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+make -j4
+git pull
+make -j4
+git pull
+make -j4
+srun -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 50 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 ./odd_even_sort 100 ./data/100.dat
+srun -n 56 ./odd_even_sort 1000 ./data/1000.dat
+srun -n 56 ./odd_even_sort 10000 ./data/10000.dat
+srun -n 50 ./odd_even_sort 10000 ./data/10000.dat
+srun -n 50 ./odd_even_sort 100 ./data/100.dat
+srun -n 50 ./odd_even_sort 100000 ./data/100000.dat
+srun -n 50 ./odd_even_sort 1000000 ./data/1000000.dat
+srun -n 50 ./odd_even_sort 10000000 ./data/10000000.dat
+srun -n 50 ./odd_even_sort 100000000 ./data/100000000.dat
+srun --cpu-bind=verbose -n 50 ./odd_even_sort 100000000 ./data/100000000.dat
+cd PA1
+ls
+git pull
+make -j4
+spack
+spack load openmpi
+make -j4
+git pull
+make -j4
+git pull
+make -j4
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+git pull
+make -j4
+git pull
+make -j4
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+cat ./data/100.dat
+git pull
+make -j4
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+make -j4
+git pull
+make -j4
+git pull
+make -j4
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+git pull
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+make -j4
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+srun -n 5 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+git pull
+srun -n 5 ./odd_even_sort 100 ./data/100.dat
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+srun -n 10 ./odd_even_sort 100 ./data/100.dat
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+srun -n 10 ./odd_even_sort 100 ./data/100.dat
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+srun -n 5 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 5 ./odd_even_sort 100 ./data/100.dat
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+srun -n 20 ./odd_even_sort 10000 ./data/10000.dat
+srun -n 20 ./odd_even_sort 100 ./data/100.dat
+srun -n 10 ./odd_even_sort 100 ./data/100.dat
+srun -n 10 ./odd_even_sort 10000 ./data/10000.dat
+srun -n 20 ./odd_even_sort 10000 ./data/10000.dat
+srun -n 20 ./odd_even_sort 1000000 ./data/1000000.dat
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+make -j4
+srun -n 20 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 3 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 3 ./odd_even_sort 100 ./data/100.dat
+srun -n 10 ./odd_even_sort 100 ./data/100.dat
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+git pull
+git add .
+git commit -am "123"
+git pull
+git push
+make -j4
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+git pull
+make -j4
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+valgrind
+valgrind ./odd_even_sort 100 ./data/100.dat
+valgrind --leak-check=full --track-origins=yes ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+git pull
+make -j4
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
