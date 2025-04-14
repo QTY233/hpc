@@ -9,7 +9,7 @@ LOCAL_RANK=$SLURM_LOCALID # for SLURM
 LOCAL_SIZE=$SLURM_TASKS_PER_NODE # for SLURM
 
 NCPUS=$(nproc --all) # eg: 28
-NUM_NUMA=2
+NUM_NUMA=4
 
 # calculate binding parameters
 # bind to sequential cores in a NUMA domain
