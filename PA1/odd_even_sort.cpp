@@ -24,13 +24,13 @@ void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
     if (out_of_range) return;
     int max_block_len = n / nprocs + (n % nprocs > 0 ? 1 : 0);
-    // std::cerr << n << " " << nprocs << " " << block_len << " " << max_block_len << std::endl;
     unsigned* data_int = new unsigned[max_block_len];
     unsigned* temp_data = new unsigned[max_block_len];
     unsigned* sorted_data = new unsigned[max_block_len << 1];
+
     for (size_t i = 0; i < block_len; ++i) data_int[i] = float_to_uint(data[i]);
-    // std::sort(data_int, data_int + block_len);
     size_t count[256];
+
     for (int pass = 0; pass < 4; ++pass) {
         memset(count, 0, sizeof(count));
         for (size_t i = 0; i < block_len; ++i) 
@@ -79,7 +79,6 @@ void Worker::sort() {
                 &receive_num, 1, MPI_INT, rank + 1, 1,
                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         }
-        // if (rank == 6) std::cerr << "change num" << std::endl;
 
         if (step & 1) {
             if (rank & 1) {
@@ -102,7 +101,6 @@ void Worker::sort() {
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             }
         }
-        // if (rank == 6) std::cerr << "change data" << std::endl;
 
         if ((rank + step) & 1) {
             size_t i = 0, j = 0, k = 0;
@@ -123,7 +121,6 @@ void Worker::sort() {
             while (j < (size_t)receive_num) sorted_data[k++] = temp_data[j++];
             std::memcpy(data_int + (block_len - send_num), sorted_data, send_num * sizeof(unsigned));
         }
-        // if (rank == 6) std::cerr << "sort" << std::endl;
     }
     for (size_t i = 0; i < block_len; ++i) data[i] = uint_to_float(data_int[i]);
     delete[] data_int;
