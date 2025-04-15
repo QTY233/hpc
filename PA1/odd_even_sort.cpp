@@ -62,6 +62,19 @@ void Worker::sort() {
             MPI_Sendrecv(&send_num, 1, MPI_INT, rank - 1, 1,
                 &receive_num, 1, MPI_INT, rank - 1, 1,
                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+            MPI_Sendrecv(data_int, send_num, MPI_INT, rank - 1, 0,
+                    temp_data, receive_num, MPI_INT, rank - 1, 0,
+                    MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+            size_t i = 0, j = 0, k = 0;
+            while (i < (size_t)send_num && j < (size_t)receive_num) {
+                if (data_int[i] < temp_data[j]) sorted_data[k++] = data_int[i++];
+                else sorted_data[k++] = temp_data[j++];
+            }
+            while (i < (size_t)send_num) sorted_data[k++] = data_int[i++];
+            while (j < (size_t)receive_num) sorted_data[k++] = temp_data[j++];
+            std::memcpy(data_int, sorted_data + receive_num, send_num * sizeof(unsigned));
         } else {
             if (last_rank) continue;
             MPI_Sendrecv(data_int + block_len - 1, 1, MPI_INT, rank + 1, 2,
@@ -79,40 +92,11 @@ void Worker::sort() {
             MPI_Sendrecv(&send_num, 1, MPI_INT, rank + 1, 1,
                 &receive_num, 1, MPI_INT, rank + 1, 1,
                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-        }
 
-        if (step & 1) {
-            if (rank & 1) {
-                MPI_Sendrecv(data_int + block_len - send_num, send_num, MPI_INT, rank + 1, 0,
+            MPI_Sendrecv(data_int + block_len - send_num, send_num, MPI_INT, rank + 1, 0,
                     temp_data, receive_num, MPI_INT, rank + 1, 0,
                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-            } else {
-                MPI_Sendrecv(data_int, send_num, MPI_INT, rank - 1, 0,
-                    temp_data, receive_num, MPI_INT, rank - 1, 0,
-                    MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-            }
-        } else {
-            if (rank & 1) {
-                MPI_Sendrecv(data_int, send_num, MPI_INT, rank - 1, 0,
-                    temp_data, receive_num, MPI_INT, rank - 1, 0,
-                    MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-            } else {
-                MPI_Sendrecv(data_int + block_len - send_num, send_num, MPI_INT, rank + 1, 0,
-                    temp_data, receive_num, MPI_INT, rank + 1, 0,
-                    MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-            }
-        }
 
-        if ((rank + step) & 1) {
-            size_t i = 0, j = 0, k = 0;
-            while (i < (size_t)send_num && j < (size_t)receive_num) {
-                if (data_int[i] < temp_data[j]) sorted_data[k++] = data_int[i++];
-                else sorted_data[k++] = temp_data[j++];
-            }
-            while (i < (size_t)send_num) sorted_data[k++] = data_int[i++];
-            while (j < (size_t)receive_num) sorted_data[k++] = temp_data[j++];
-            std::memcpy(data_int, sorted_data + receive_num, send_num * sizeof(unsigned));
-        } else {
             size_t i = block_len - send_num, j = 0, k = 0;
             while (i < block_len && j < (size_t)receive_num) {
                 if (data_int[i] < temp_data[j]) sorted_data[k++] = data_int[i++];
