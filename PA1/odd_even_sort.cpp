@@ -24,6 +24,7 @@ void Worker::sort() {
     // TODO: implement the odd-even sort algorithm here
     if (out_of_range) return;
     int max_block_len = n / nprocs + (n % nprocs > 0 ? 1 : 0);
+    std::cerr << "rank" << rank << " max_block_len: " << max_block_len << std::endl;
     unsigned* data_int = new unsigned[max_block_len];
     unsigned* temp_data = new unsigned[max_block_len];
     unsigned* sorted_data = new unsigned[max_block_len << 1];
