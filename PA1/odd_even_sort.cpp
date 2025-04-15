@@ -95,18 +95,18 @@ void Worker::sort() {
                     send_num = block_len - mid + 1;
                 } else l = mid + 1;
             }
-            // MPI_Sendrecv(&send_num, 1, MPI_INT, rank + 1, 1,
-            //     &receive_num, 1, MPI_INT, rank + 1, 1,
-            //     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            MPI_Sendrecv(&send_num, 1, MPI_INT, rank + 1, 1,
+                &receive_num, 1, MPI_INT, rank + 1, 1,
+                MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
             MPI_Isend(data_int + block_len - send_num, send_num, MPI_INT, rank + 1, 0,
                 MPI_COMM_WORLD, &requests[0]);
             MPI_Irecv(temp_data, receive_num, MPI_INT, rank + 1, 0,
                 MPI_COMM_WORLD, &requests[1]);
             MPI_Wait(&requests[1], MPI_STATUS_IGNORE);
-            MPI_Sendrecv(data_int + block_len - send_num, send_num, MPI_INT, rank + 1, 0,
-                temp_data, receive_num, MPI_INT, rank + 1, 0,
-                MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            // MPI_Sendrecv(data_int + block_len - send_num, send_num, MPI_INT, rank + 1, 0,
+            //     temp_data, receive_num, MPI_INT, rank + 1, 0,
+            //     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
             size_t i = block_len - send_num, j = 0, k = 0;
             while (i < block_len && j < (size_t)receive_num) {
