@@ -42,7 +42,7 @@ void Worker::sort() {
             temp_data[--count[(data_int[i] >> (pass * 8)) & 0xFF]] = data_int[i];
         memcpy(data_int, temp_data, block_len * sizeof(unsigned int));
     }
-    // MPI_Request requests[2];
+    MPI_Request requests[2];
     for (int step = 0; step < nprocs; ++step) {
         int send_num = 1, receive_num;
         if ((rank + step) & 1) {
