@@ -20,7 +20,7 @@ if [ ! -x "$EXE" ]; then
 fi
 
 # 按规模分档运行
-if [ "$N" -lt 100 ]; then
+if [ "$N" -lt 110 ]; then
     srun -n 2 "$EXE" "$N" "$DATAFILE"
 elif [ "$N" -lt 10000 ]; then
     srun -n 10 "$EXE" "$N" "$DATAFILE"
