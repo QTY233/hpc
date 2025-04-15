@@ -65,7 +65,7 @@ void Worker::sort() {
 
             MPI_Isend(data_int, send_num, MPI_INT, rank - 1, 0,
                 MPI_COMM_WORLD, &requests[0]);
-            MPI_Irecv(temp_data, receive_num, MPI_INT, rank - 1, 0,
+            MPI_Irecv(temp_data + block_len - receive_num, receive_num, MPI_INT, rank - 1, 0,
                 MPI_COMM_WORLD, &requests[1]);
             MPI_Wait(&requests[1], MPI_STATUS_IGNORE);
             
@@ -98,7 +98,7 @@ void Worker::sort() {
 
             MPI_Isend(data_int + block_len - send_num, send_num, MPI_INT, rank + 1, 0,
                 MPI_COMM_WORLD, &requests[0]);
-            MPI_Irecv(temp_data + block_len - receive_num, receive_num, MPI_INT, rank + 1, 0,
+            MPI_Irecv(temp_data, receive_num, MPI_INT, rank + 1, 0,
                 MPI_COMM_WORLD, &requests[1]);
                 MPI_Wait(&requests[1], MPI_STATUS_IGNORE);
 
