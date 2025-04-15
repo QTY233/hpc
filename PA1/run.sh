@@ -22,7 +22,7 @@ fi
 # 按规模分档运行
 if [ "$N" -lt 110 ]; then
     srun -n 1 "$EXE" "$N" "$DATAFILE"
-elif [ "$N" -lt 10000 ]; then
+elif [ "$N" -lt 10010 ]; then
     srun -n 5 "$EXE" "$N" "$DATAFILE"
 else
     srun -N 2 -n 56 --cpu-bind=none ./numactl.sh "$EXE" "$N" "$DATAFILE"
