@@ -15,9 +15,8 @@ NUM_NUMA=2
 # calculate binding parameters
 # bind to sequential cores in a NUMA domain
 CORES_PER_PROCESS=$(($NCPUS / $LOCAL_SIZE)) # eg: 7 when LOCAL_SIZE=4
-NUMA_ID=$(($LOCAL_RANK / $NUM_NUMA)) # eg: 0, 0, 1, 1
-NUMA_OFFSET=$(($LOCAL_RANK % $NUM_NUMA)) # 0, 1, 0, 1
-CORE_START=$(($NUMA_ID + $NUMA_OFFSET * $LOCAL_SIZE / $NUM_NUMA)) # eg: 0, 1, 14, 15
+NUMA_ID=$(($LOCAL_RANK * 2)) # eg: 0, 0, 1, 1
+CORE_START=$(($NUMA_ID / $LOCAL_SIZE + $NUMA_ID % $LOCAL_SIZE)) # eg: 0, 1, 14, 15
 CORES=$(seq -s, $CORE_START $NUM_NUMA $CORE_START) # eg: 0,2,4,6,8,10,12 for rank 0
 
 # execute command with specific cores
