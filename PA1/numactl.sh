@@ -19,5 +19,5 @@ CORE_START=$(($NUMA_ID / $LOCAL_SIZE + $NUMA_ID % $LOCAL_SIZE)) # eg: 0, 1, 14, 
 CORES=$(seq -s, $CORE_START $NUM_NUMA $CORE_START) # eg: 0,2,4,6,8,10,12 for rank 0
 
 # execute command with specific cores
-echo "Process $LOCAL_RANK on $(hostname) bound to core $CORES, NCMPID=$NCPUS, NUMA_ID=$NUMA_ID, NUMA_OFFSET=$NUMA_OFFSET, LOCAL_SIZE=$LOCAL_SIZE"
-# exec numactl -C "$CORES" $@
+echo "Process $LOCAL_RANK on $(hostname) bound to core $CORES"
+exec numactl -C "$CORES" $@
