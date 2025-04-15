@@ -20,4 +20,4 @@ CORES=$(seq -s, $CORE_START $NUM_NUMA $CORE_START) # eg: 0,2,4,6,8,10,12 for ran
 
 # execute command with specific cores
 echo "Process $LOCAL_RANK on $(hostname) bound to core $CORES"
-# exec numactl -C "$CORES" $@
+exec numactl -C "$CORES" $@
