@@ -932,3 +932,76 @@ srun -n 7 ./odd_even_sort 100 ./data/100.dat
 git pull
 make -j4
 srun -n 7 ./odd_even_sort 100 ./data/100.dat
+cd PA1
+ls
+spack
+spack load openmpi
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+ls
+make -j4
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+ls
+srun -n 7 ./odd_even_sort 100 ./data/100.dat
+srun -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 --cpu-bind=cores ./odd_even_sort 100000000 ./data/100000000.dat
+lscpu -e
+srun -n 56 --cpu-bind=map_cpu:0,2,4,6,8,10,12,14,16,18,20,22,24,26,1,3,5,7,9,11,13,15,17,19,21,23,25,27, 0,2,4,6,8,10,12,14,16,18,20,22,24,26,1,3,5,7,9,11,13,15,17,19,21,23,25,27 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 --cpu-bind=map_cpu:0,2,4,6,8,10,12,14,16,18,20,22,24,26,1,3,5,7,9,11,13,15,17,19,21,23,25,27,0,2,4,6,8,10,12,14,16,18,20,22,24,26,1,3,5,7,9,11,13,15,17,19,21,23,25,27 ./odd_even_sort 100000000 ./data/100000000.dat
+srun --cpu-bind=verbose -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+lscpu
+srun --cpu-bind=sockets -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+git commit -am "46"
+git pull
+git push
+ls
+srun -n 56 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+chmod +x ./numactl.sh
+srun -n 56 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 4 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 28 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 28 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 28 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+numactl --show
+./home/course/hpc/tools/affinity-test
+/home/course/hpc/tools/affinity-test
+srun -n 28 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+/home/course/hpc/tools/affinity-test
+srun -n 56 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 28 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+git commit -am "123"
+git pull
+git push
+srun -n 28 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+numactl -C 0-3
+numactl -C 0,1,2,3
+lscpu
+./numactl.sh
+git commit -am "123"
+git add .
+git commit -am "123"
+git push
+git pull
+srun -n 56 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 28 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+srun -n 28 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 --ntasks=56 --nodes=2 --ntasks-per-node=28 --cpus-per-task=1 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+./numactl
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+lscpu
+cd ..
+git pull
+cd exp5
+ls
+source /opt/intel/oneapi/setvars.sh
+run.sh
+./run.sh
+status
+exit
