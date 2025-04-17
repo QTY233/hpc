@@ -1005,3 +1005,203 @@ run.sh
 ./run.sh
 status
 exit
+squeue
+scancel 814173
+squeue
+scancel 814177
+squeue
+scancel 814302
+squeue
+scancel 814310
+squeue
+cd PA1
+ls
+srun -n 56 ./odd_even_sort 1000000 ./1000000.dat
+srun -n 50 ./odd_even_sort 1000000 ./1000000.dat
+srun -N 2 -n 50 ./odd_even_sort 1000000 ./1000000.dat
+srun -n 4 ./odd_even_sort 100 ./100.dat
+spack
+spack load openmpi
+srun -n 4 ./odd_even_sort 100 ./100.dat
+make -j4
+make clean
+make -j4
+srun -n 4 ./odd_even_sort 100 ./100.dat
+git pull
+git commit -am "123"
+git pull
+git push
+make -j4
+srun -n 4 ./odd_even_sort 100 ./100.dat
+git pull
+git commit -am "123"
+git pull
+git push
+make -j4
+make clean
+make -j4
+srun -n 4 ./odd_even_sort 100 ./100.dat
+git pull
+git commit -am "123"
+git pull
+git push
+make -j4
+make clean
+make -j4
+srun -n 4 ./odd_even_sort 100 ./100.dat
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+git pull
+git commit -am "123"
+git push
+git pull
+git push
+make -j4
+make clean
+make -j4
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+srun -n 56 ./odd_even_sort 1000000 ./data/1000000.dat
+srun -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+git commit -am "123"
+git pull
+git push
+make -j4
+make clean
+make -j4
+srun -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+git commit -am "123"
+git pull
+make clean
+make -j4
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git commit -am "123"
+git push
+git pull
+make -j4
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+srun -N 2 -n 56 ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+srun -N 2 -n 56 --cpu-bind=none ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+srun -N 2 -n 56 --cpu-bind=none ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+make -j4
+srun -N 2 -n 56 --cpu-bind=none ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 4 ./odd_even_sort 100 ./data/100.dat
+srun -n 5 ./odd_even_sort 100 ./data/100.dat
+srun -n 5 ./odd_even_sort 10000 ./data/10000.dat
+make -j4
+git pull
+git commit -am "123"
+git pull
+git push
+make -j4
+make clean
+make -j4
+srun -n 5 ./odd_even_sort 10000 ./data/10000.dat
+git pull
+git commit -am "123"
+git pull
+make clean
+make -j4
+srun -n 5 ./odd_even_sort 10000 ./data/10000.dat
+srun -N 2 -n 56 --cpu-bind=none ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -n 56 ./odd_even_sort 10000 ./data/10000.dat
+git push
+git pull
+git commit -am "123"
+git pull
+git push
+srun -n 56 ./odd_even_sort 10000 ./data/10000.dat
+make -j4
+make clean
+make -j4
+git pull
+git commit -am "123"
+git pull
+make -j4
+srun -n 56 ./odd_even_sort 10000 ./data/10000.dat
+srun -N 2 -n 56 --cpu-bind=none ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+git commit -am "123'
+"
+git add .
+git commit -am "123"
+git push
+git pull
+make -j4
+git pull
+make -j4
+srun -N 2 -n 56 --cpu-bind=none ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 2 -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+my_quota
+sinfo
+squeue
+srun -N 2 -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+sinfo
+squeue
+srun -N 2 -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+git pull
+git commit -am "123"
+git pull
+srun -N 2 -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+make -j4
+make clean
+make -j4
+srun -N 2 -n 56 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 2 -n 56 --cpu-bind=none ./numactl.sh ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 2 -n 56 --cpu-bind=none ./numactl.sh ./odd_even_sort 100 ./data/100.dat
+srun -N 2 -n 56 --cpu-bind=none ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git commit -am "123"
+git push
+git pull
+./run.sh ./odd_even_sort 1000000 ./data/1000000.dat
+./run.sh ./odd_even_sort 100 ./data/100.dat
+git pull
+./run.sh ./odd_even_sort 100 ./data/100.dat
+git pull
+./run.sh ./odd_even_sort 100 ./data/100.dat
+./run.sh ./odd_even_sort 1000 ./data/1000.dat
+./run.sh ./odd_even_sort 100 ./data/100.dat
+git pull
+./run.sh ./odd_even_sort 1000 ./data/1000.dat
+./run.sh ./odd_even_sort 10000 ./data/10000.dat
+./run.sh ./odd_even_sort 1000000 ./data/1000000.dat
+git pull
+./run.sh ./odd_even_sort 10000 ./data/10000.dat
+./run.sh ./odd_even_sort 100000 ./data/100000.dat
+./run.sh ./odd_even_sort 1000000 ./data/1000000.dat
+./run.sh ./odd_even_sort 10000000 ./data/10000000.dat
+srun -N 1 -n 28 --cpu-bind=none ./numactl.sh ./odd_even_sort 1000000 ./data/1000000.dat
+srun -N 1 -n 28 --cpu-bind=none ./numactl.sh ./odd_even_sort 10000000 ./data/10000000.dat
+git pull
+srun -N 1 -n 28 --cpu-bind=none ./numactl.sh ./odd_even_sort 10000000 ./data/10000000.dat
+./run.sh ./odd_even_sort 10000000 ./data/10000000.dat
+git pull
+./run.sh ./odd_even_sort 10000000 ./data/10000000.dat
+./run.sh ./odd_even_sort 100000000 ./data/100000000.dat
+ls
+srun -n 40 --cpu-bind=none ./numactl.sh ./odd_even_sort 10000000 ./data/10000000.dat
+srun -n 1 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 1 -n 2 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 1 -n 4 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 1 -n 8 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 1 -n 16 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 2 -n 32 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 1 -n 28 ./odd_even_sort 100000000 ./data/100000000.dat
+srun -N 1 -n 16 ./odd_even_sort 100000000 ./data/100000000.dat
