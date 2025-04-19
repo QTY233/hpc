@@ -1,0 +1,39 @@
+*
+* Visual Studio Code Server
+*
+* By using the software, you agree to
+* the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
+* the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
+*
+Server bound to /tmp/code-959b01a4-a403-4660-88f1-41ae1dbb0c3f
+Extension host agent listening on /tmp/code-959b01a4-a403-4660-88f1-41ae1dbb0c3f
+
+[12:34:02] 
+
+
+
+
+[12:34:02] Extension host agent started.
+[12:34:02] [<unknown>][f0e579c0][ManagementConnection] New connection established.
+[12:34:02] [<unknown>][85ca89a1][ExtensionHostConnection] New connection established.
+Generating translation files failed. Error: ENOENT: no such file or directory, open '/home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/out/nls.keys.json'
+    at async open (node:internal/fs/promises:639:25)
+    at async Object.readFile (node:internal/fs/promises:1246:14)
+    at async jw (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/out/server-main.js:3:16844)
+    at async V8 (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/out/server-main.js:71:41194)
+    at async of.start (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/out/server-main.js:71:44360) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/out/nls.keys.json'
+}
+[12:34:03] [<unknown>][85ca89a1][ExtensionHostConnection] <2529091> Launched Extension Host Process.
+[12:34:09] [<unknown>][f0e579c0][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[12:34:09] [<unknown>][85ca89a1][ExtensionHostConnection] <2529091> Extension Host Process exited with code: 0, signal: null.
+Cancelling previous shutdown timeout
+[12:34:09] Cancelling previous shutdown timeout
+Last EH closed, waiting before shutting down
+[12:34:09] Last EH closed, waiting before shutting down
+[12:34:17] [<unknown>][1d24124e][ManagementConnection] New connection established.
+[12:34:17] [<unknown>][7e36b79a][ExtensionHostConnection] New connection established.
+[12:34:17] [<unknown>][7e36b79a][ExtensionHostConnection] <2529394> Launched Extension Host Process.

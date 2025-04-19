@@ -1,0 +1,29 @@
+2025-04-17 12:34:18.324 [info] Extension host with pid 2529394 started
+2025-04-17 12:34:18.360 [info] Lock '/home/course/hpc/users/2022012388/.vscode-server/data/User/workspaceStorage/5d9f335d4b46293a60df0322a2cde691/vscode.lock': Lock acquired.
+2025-04-17 12:34:18.447 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: false, activationEvent: '*', root cause: vscode.git
+2025-04-17 12:34:18.449 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-04-17 12:34:19.376 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: '*'
+2025-04-17 12:34:19.377 [info] ExtensionService#_doActivateExtension vscode.github, startup: false, activationEvent: '*'
+2025-04-17 12:34:19.657 [info] Eager extensions activated
+2025-04-17 12:34:19.658 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-04-17 12:34:19.658 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-04-17 12:34:19.659 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-04-17 12:34:19.659 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-04-17 12:34:24.745 [warning] Using default string since no string found in i18n bundle that has the key: Ask Copilot
+2025-04-17 12:34:24.745 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-17 12:34:24.745 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-17 12:34:24.745 [warning] Using default string since no string found in i18n bundle that has the key: Start your editing session by defining a set of files that you want to work with. Then ask Copilot for the changes you want to make.
+2025-04-17 12:34:24.746 [warning] Using default string since no string found in i18n bundle that has the key: Edit with Copilot
+2025-04-17 12:34:24.746 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-17 12:34:24.746 [warning] Using default string since no string found in i18n bundle that has the key: Start your editing session by defining a set of files that you want to work with. Then ask Copilot for the changes you want to make.
+2025-04-17 12:34:24.746 [warning] Using default string since no string found in i18n bundle that has the key: Edit with Copilot
+2025-04-17 12:34:24.746 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-17 12:34:24.746 [warning] Using default string since no string found in i18n bundle that has the key: Start your editing session by defining a set of files that you want to work with. Then ask Copilot for the changes you want to make.
+2025-04-17 12:34:24.746 [warning] Using default string since no string found in i18n bundle that has the key: Edit with Copilot
+2025-04-17 12:34:24.747 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-17 12:34:24.747 [warning] Using default string since no string found in i18n bundle that has the key: Ask Copilot to edit your files in [agent mode]({0}). Copilot will automatically use multiple requests to pick files to edit, run terminal commands, and iterate on errors.
+2025-04-17 12:34:24.747 [warning] Using default string since no string found in i18n bundle that has the key: Edit with Copilot
+2025-04-17 12:34:35.175 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onTerminalQuickFixRequest:ms-vscode.npm-command'
+2025-04-17 12:46:18.195 [info] Extension host terminating: received terminate message from renderer
+2025-04-17 12:46:18.196 [info] Lock '/home/course/hpc/users/2022012388/.vscode-server/data/User/workspaceStorage/5d9f335d4b46293a60df0322a2cde691/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2025-04-17 12:46:18.279 [info] Extension host with pid 2529394 exiting with code 0

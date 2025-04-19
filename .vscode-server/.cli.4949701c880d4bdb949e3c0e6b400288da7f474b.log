@@ -1,0 +1,5 @@
+Listening on 127.0.0.1:34939
+[2025-04-17 12:34:17] info Disposed of connection to running server.
+[2025-04-17 12:34:17] info Checking /home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/log.txt and /home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/pid.txt for a running server...
+[2025-04-17 12:34:17] info Found running server (pid=2528924)
+[2025-04-17 12:46:18] info Disposed of connection to running server.

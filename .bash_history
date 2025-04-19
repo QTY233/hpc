@@ -1205,3 +1205,91 @@ srun -N 1 -n 16 ./odd_even_sort 100000000 ./data/100000000.dat
 srun -N 2 -n 32 ./odd_even_sort 100000000 ./data/100000000.dat
 srun -N 1 -n 28 ./odd_even_sort 100000000 ./data/100000000.dat
 srun -N 1 -n 16 ./odd_even_sort 100000000 ./data/100000000.dat
+ls
+spack
+spack load cuda
+make
+spack
+spack load cuda
+spack
+make
+cd exp6
+spack
+spack find
+spack load gcc@9.2.0
+spack load cuda
+make
+srun --exclusive ./test_gmem
+srun --exclusive ./test_smem
+srun --exclusive ./test_smem --gpus 1
+srun --exclusive --gpus 1 ./test_smem
+srun --exclusive --gpus 1 ./test_gmem
+spack
+ls
+srun --exclusive --gpus 1 ./test_gmem
+make
+spack find
+spack load gcc@9.2.0
+spack load cuda
+make
+srun --exclusive --gpus 1 ./test_gmem
+make
+srun --exclusive --gpus 1 ./test_gmem
+make
+srun --exclusive --gpus 1 ./test_gmem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+make
+srun --exclusive --gpus 1 ./test_smem
+cp -R /home/course/hpc/assignments/2025/exp6 ~/
+ls
+git add .
+git commit -m "exp6 init"
+git push
+cd exp6
+ls
+spack load cuda
+spack
+spack load cuda
+make
+spack find
+spack load gcc@9.2.0
+spack load cuda
+make
+srun --exclusive ./test_gmem
+srun --exclusive ./test_smem
+exit
