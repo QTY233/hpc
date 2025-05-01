@@ -1,0 +1,9 @@
+2025-04-29 20:01:35.307 [info] [main] 日志级别: Info
+2025-04-29 20:01:35.307 [info] [main] 正在验证在以下位置找到的 git: "git"
+2025-04-29 20:01:35.307 [info] [main] 使用来自 "git" 的 git "2.39.5"
+2025-04-29 20:01:35.307 [info] [Model][doInitialScan] Initial repository scan started
+2025-04-29 20:01:35.307 [warning] [Model][traverseWorkspaceFolder] Unable to read workspace folder '/home/course/hpc/users': Error: EACCES: permission denied, scandir '/home/course/hpc/users'
+2025-04-29 20:01:35.307 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-29 20:01:35.307 [info] fatal: not a git repository (or any parent up to mount point /home/course/hpc)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-04-29 20:01:35.307 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)

@@ -1,0 +1,234 @@
+*
+* Visual Studio Code Server
+*
+* By using the software, you agree to
+* the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
+* the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
+*
+Server bound to /tmp/code-15bc621d-d303-42be-bf1d-8238a72e862b
+Extension host agent listening on /tmp/code-15bc621d-d303-42be-bf1d-8238a72e862b
+
+[20:00:21] 
+
+
+
+
+[20:00:21] Extension host agent started.
+[20:00:21] [<unknown>][876afb4a][ManagementConnection] New connection established.
+[20:00:21] [<unknown>][9d18264c][ExtensionHostConnection] New connection established.
+Generating translation files failed. Error: ENOENT: no such file or directory, open '/home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/nls.keys.json'
+    at async open (node:internal/fs/promises:639:25)
+    at async Object.readFile (node:internal/fs/promises:1246:14)
+    at async jw (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:3:16844)
+    at async V8 (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:71:41194)
+    at async of.start (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:71:44360) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/nls.keys.json'
+}
+[20:00:21] [<unknown>][9d18264c][ExtensionHostConnection] <2534296> Launched Extension Host Process.
+[20:00:24] Getting Manifest... github.copilot
+[20:00:24] Getting Manifest... github.copilot-chat
+[20:00:25] Installing extension: github.copilot {
+  productVersion: { version: '1.99.3', date: '2025-04-15T23:18:46.076Z' },
+  pinned: false,
+  operation: 3,
+  isApplicationScoped: false,
+  donotVerifySignature: false,
+  context: { clientTargetPlatform: 'win32-x64' },
+  profileLocation: gr {
+    scheme: 'file',
+    authority: '',
+    path: '/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json',
+    _fsPath: '/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json'
+  }
+}
+[20:00:25] Installing extension: github.copilot-chat {
+  productVersion: { version: '1.99.3', date: '2025-04-15T23:18:46.076Z' },
+  pinned: false,
+  operation: 3,
+  isApplicationScoped: false,
+  donotVerifySignature: false,
+  context: { clientTargetPlatform: 'win32-x64' },
+  profileLocation: gr {
+    scheme: 'file',
+    authority: '',
+    path: '/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json',
+    _fsPath: '/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json'
+  }
+}
+[20:00:25] Getting Manifest... github.copilot
+[20:00:26] Getting Manifest... github.copilot-chat
+[20:00:31] Extension signature verification result for github.copilot-chat: Success. Internal Code: 0. Executed: true. Duration: 2128ms.
+[20:00:31] Extension signature verification result for github.copilot: Success. Internal Code: 0. Executed: true. Duration: 2159ms.
+[20:00:32] Extracted extension to file:///home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-chat-0.26.7: github.copilot-chat
+[20:00:32] Renamed to /home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-chat-0.26.7
+[20:00:32] Marked extension as removed github.copilot-chat-0.26.5
+[20:00:32] Extension installed successfully: github.copilot-chat file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json
+[20:00:32] Extracted extension to file:///home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-1.311.0: github.copilot
+[20:00:32] Renamed to /home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-1.311.0
+[20:00:32] Marked extension as removed github.copilot-1.303.0
+[20:00:32] Extension installed successfully: github.copilot file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json
+[20:00:35] [<unknown>][876afb4a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[20:00:35] [<unknown>][9d18264c][ExtensionHostConnection] <2534296> Extension Host Process exited with code: 0, signal: null.
+Cancelling previous shutdown timeout
+[20:00:35] Cancelling previous shutdown timeout
+Last EH closed, waiting before shutting down
+[20:00:35] Last EH closed, waiting before shutting down
+[20:01:12] [<unknown>][b54e7f92][ManagementConnection] New connection established.
+[20:01:12] [<unknown>][e3f1eb08][ExtensionHostConnection] New connection established.
+[20:01:12] [<unknown>][e3f1eb08][ExtensionHostConnection] <2541195> Launched Extension Host Process.
+[node.js fs] readdir with filetypes failed with error:  Error: EACCES: permission denied, scandir '/home/course/hpc/users'
+    at async Object.readdir (node:internal/fs/promises:952:18)
+    at async kL (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:43:4569)
+    at async Object.Wu (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:43:4498)
+    at async Xl.readdir (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:67:15753) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'scandir',
+  path: '/home/course/hpc/users'
+}
+[20:01:25] [<unknown>][b54e7f92][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[20:01:25] [<unknown>][e3f1eb08][ExtensionHostConnection] <2541195> Extension Host Process exited with code: 0, signal: null.
+Cancelling previous shutdown timeout
+[20:01:25] Cancelling previous shutdown timeout
+Last EH closed, waiting before shutting down
+[20:01:25] Last EH closed, waiting before shutting down
+[20:01:29] [<unknown>][5cdd0eef][ExtensionHostConnection] New connection established.
+[20:01:29] [<unknown>][5cdd0eef][ExtensionHostConnection] <2541735> Launched Extension Host Process.
+[20:01:29] [<unknown>][d176e003][ManagementConnection] New connection established.
+[node.js fs] readdir with filetypes failed with error:  Error: EACCES: permission denied, scandir '/home/course/hpc/users'
+    at async Object.readdir (node:internal/fs/promises:952:18)
+    at async kL (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:43:4569)
+    at async Object.Wu (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:43:4498)
+    at async Xl.readdir (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:67:15753) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'scandir',
+  path: '/home/course/hpc/users'
+}
+[node.js fs] readdir with filetypes failed with error:  Error: EACCES: permission denied, scandir '/home/course/hpc/users'
+    at async Object.readdir (node:internal/fs/promises:952:18)
+    at async kL (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:43:4569)
+    at async Object.Wu (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:43:4498)
+    at async Xl.readdir (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:67:15753) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'scandir',
+  path: '/home/course/hpc/users'
+}
+[node.js fs] readdir with filetypes failed with error:  Error: EACCES: permission denied, scandir '/home/course/hpc/users'
+    at async Object.readdir (node:internal/fs/promises:952:18)
+    at async kL (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:43:4569)
+    at async Object.Wu (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:43:4498)
+    at async Xl.readdir (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:67:15753) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'scandir',
+  path: '/home/course/hpc/users'
+}
+[20:01:30] [File Watcher] Unexpected error: Bad file descriptor (EUNKNOWN) (path: /home/course/hpc/users)
+[20:01:30] [File Watcher (universal)] Bad file descriptor
+rejected promise not handled within 1 second: CodeExpectedError: Could not find pty 13 on pty host
+stack trace: CodeExpectedError: Could not find pty 13 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateTitle (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1839)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[20:01:32] Error [CodeExpectedError]: Could not find pty 13 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateTitle (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1839)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+rejected promise not handled within 1 second: CodeExpectedError: Could not find pty 13 on pty host
+stack trace: CodeExpectedError: Could not find pty 13 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateIcon (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1889)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[20:01:32] Error [CodeExpectedError]: Could not find pty 13 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateIcon (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1889)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[20:01:55] [<unknown>][d176e003][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[20:01:55] [<unknown>][5cdd0eef][ExtensionHostConnection] <2541735> Extension Host Process exited with code: 0, signal: null.
+Cancelling previous shutdown timeout
+[20:01:55] Cancelling previous shutdown timeout
+Last EH closed, waiting before shutting down
+[20:01:55] Last EH closed, waiting before shutting down
+[20:02:05] [<unknown>][d94c9fef][ExtensionHostConnection] New connection established.
+[20:02:05] [<unknown>][d94c9fef][ExtensionHostConnection] <2543674> Launched Extension Host Process.
+[20:02:05] [<unknown>][b55d9530][ManagementConnection] New connection established.
+rejected promise not handled within 1 second: CodeExpectedError: Could not find pty 4 on pty host
+stack trace: CodeExpectedError: Could not find pty 4 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateTitle (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1839)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[20:02:08] Error [CodeExpectedError]: Could not find pty 4 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateTitle (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1839)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)

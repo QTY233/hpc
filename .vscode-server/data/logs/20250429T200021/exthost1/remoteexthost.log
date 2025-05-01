@@ -1,0 +1,26 @@
+2025-04-29 20:00:22.667 [info] Extension host with pid 2534296 started
+2025-04-29 20:00:22.725 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-04-29 20:00:22.828 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-04-29 20:00:22.887 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-04-29 20:00:22.887 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-04-29 20:00:23.244 [info] Eager extensions activated
+2025-04-29 20:00:23.245 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-04-29 20:00:23.245 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-04-29 20:00:23.246 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-04-29 20:00:23.246 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-04-29 20:00:28.891 [warning] Using default string since no string found in i18n bundle that has the key: Ask Copilot
+2025-04-29 20:00:28.891 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-29 20:00:28.891 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-29 20:00:28.891 [warning] Using default string since no string found in i18n bundle that has the key: Start your editing session by defining a set of files that you want to work with. Then ask Copilot for the changes you want to make.
+2025-04-29 20:00:28.892 [warning] Using default string since no string found in i18n bundle that has the key: Edit with Copilot
+2025-04-29 20:00:28.892 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-29 20:00:28.892 [warning] Using default string since no string found in i18n bundle that has the key: Start your editing session by defining a set of files that you want to work with. Then ask Copilot for the changes you want to make.
+2025-04-29 20:00:28.892 [warning] Using default string since no string found in i18n bundle that has the key: Edit with Copilot
+2025-04-29 20:00:28.892 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-29 20:00:28.892 [warning] Using default string since no string found in i18n bundle that has the key: Start your editing session by defining a set of files that you want to work with. Then ask Copilot for the changes you want to make.
+2025-04-29 20:00:28.892 [warning] Using default string since no string found in i18n bundle that has the key: Edit with Copilot
+2025-04-29 20:00:28.893 [warning] Using default string since no string found in i18n bundle that has the key: {0} is powered by AI, so mistakes are possible. Review output carefully before use.
+2025-04-29 20:00:28.893 [warning] Using default string since no string found in i18n bundle that has the key: Ask Copilot to edit your files in [agent mode]({0}). Copilot will automatically use multiple requests to pick files to edit, run terminal commands, and iterate on errors.
+2025-04-29 20:00:28.893 [warning] Using default string since no string found in i18n bundle that has the key: Edit with Copilot
+2025-04-29 20:00:35.478 [info] Extension host terminating: received terminate message from renderer
+2025-04-29 20:00:35.559 [info] Extension host with pid 2534296 exiting with code 0

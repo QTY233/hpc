@@ -1293,3 +1293,43 @@ make
 srun --exclusive ./test_gmem
 srun --exclusive ./test_smem
 exit
+cp -R /home/course/hpc/assignments/2025/PA2 ~/
+ls
+git add .
+git commit -am "pa2 pre"
+git push
+cp -r /home/course/hpc/assignments/2025/exp7 ~/
+ls
+cd ~/exp7/
+source /opt/intel/oneapi/setvars.sh
+cd task0
+make
+ls
+./main_0
+./main_1
+./main_2
+./main_3
+./main_fast
+cd ..
+cd task1
+ls
+make
+make UNROLL_N=1
+make clean
+make UNROLL_N=1
+./main
+make clean
+make UNROLL_N=2
+./main
+make clean
+make UNROLL_N=4
+./main
+make clean
+make UNROLL_N=4
+make UNROLL_N=8
+make clean
+make UNROLL_N=8
+./main
+make clean
+make UNROLL_N=16
+./main

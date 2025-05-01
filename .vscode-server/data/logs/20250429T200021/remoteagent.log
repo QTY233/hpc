@@ -1,0 +1,98 @@
+2025-04-29 20:00:21.393 [info] 
+
+
+
+
+2025-04-29 20:00:21.408 [info] Extension host agent started.
+2025-04-29 20:00:21.472 [info] [<unknown>][876afb4a][ManagementConnection] New connection established.
+2025-04-29 20:00:21.482 [info] [<unknown>][9d18264c][ExtensionHostConnection] New connection established.
+2025-04-29 20:00:21.852 [info] [<unknown>][9d18264c][ExtensionHostConnection] <2534296> Launched Extension Host Process.
+2025-04-29 20:00:24.792 [info] Getting Manifest... github.copilot
+2025-04-29 20:00:24.793 [info] Getting Manifest... github.copilot-chat
+2025-04-29 20:00:25.051 [info] Installing extension: github.copilot {"productVersion":{"version":"1.99.3","date":"2025-04-15T23:18:46.076Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"donotVerifySignature":false,"context":{"clientTargetPlatform":"win32-x64"},"profileLocation":{"$mid":1,"fsPath":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","external":"file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","path":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","scheme":"file"}}
+2025-04-29 20:00:25.422 [info] Installing extension: github.copilot-chat {"productVersion":{"version":"1.99.3","date":"2025-04-15T23:18:46.076Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"donotVerifySignature":false,"context":{"clientTargetPlatform":"win32-x64"},"profileLocation":{"$mid":1,"fsPath":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","external":"file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","path":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","scheme":"file"}}
+2025-04-29 20:00:25.824 [info] Getting Manifest... github.copilot
+2025-04-29 20:00:26.142 [info] Getting Manifest... github.copilot-chat
+2025-04-29 20:00:31.852 [info] Extension signature verification result for github.copilot-chat: Success. Internal Code: 0. Executed: true. Duration: 2128ms.
+2025-04-29 20:00:31.874 [info] Extension signature verification result for github.copilot: Success. Internal Code: 0. Executed: true. Duration: 2159ms.
+2025-04-29 20:00:32.351 [info] Extracted extension to file:///home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-chat-0.26.7: github.copilot-chat
+2025-04-29 20:00:32.472 [info] Renamed to /home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-chat-0.26.7
+2025-04-29 20:00:32.593 [info] Marked extension as removed github.copilot-chat-0.26.5
+2025-04-29 20:00:32.598 [info] Extension installed successfully: github.copilot-chat file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json
+2025-04-29 20:00:32.663 [info] Extracted extension to file:///home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-1.311.0: github.copilot
+2025-04-29 20:00:32.735 [info] Renamed to /home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-1.311.0
+2025-04-29 20:00:32.793 [info] Marked extension as removed github.copilot-1.303.0
+2025-04-29 20:00:32.796 [info] Extension installed successfully: github.copilot file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json
+2025-04-29 20:00:35.469 [info] [<unknown>][876afb4a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-29 20:00:35.668 [info] [<unknown>][9d18264c][ExtensionHostConnection] <2534296> Extension Host Process exited with code: 0, signal: null.
+2025-04-29 20:00:35.669 [info] Cancelling previous shutdown timeout
+2025-04-29 20:00:35.670 [info] Last EH closed, waiting before shutting down
+2025-04-29 20:01:12.198 [info] [<unknown>][b54e7f92][ManagementConnection] New connection established.
+2025-04-29 20:01:12.205 [info] [<unknown>][e3f1eb08][ExtensionHostConnection] New connection established.
+2025-04-29 20:01:12.217 [info] [<unknown>][e3f1eb08][ExtensionHostConnection] <2541195> Launched Extension Host Process.
+2025-04-29 20:01:25.058 [info] [<unknown>][b54e7f92][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-29 20:01:25.482 [info] [<unknown>][e3f1eb08][ExtensionHostConnection] <2541195> Extension Host Process exited with code: 0, signal: null.
+2025-04-29 20:01:25.483 [info] Cancelling previous shutdown timeout
+2025-04-29 20:01:25.483 [info] Last EH closed, waiting before shutting down
+2025-04-29 20:01:29.747 [info] [<unknown>][5cdd0eef][ExtensionHostConnection] New connection established.
+2025-04-29 20:01:29.755 [info] [<unknown>][5cdd0eef][ExtensionHostConnection] <2541735> Launched Extension Host Process.
+2025-04-29 20:01:29.759 [info] [<unknown>][d176e003][ManagementConnection] New connection established.
+2025-04-29 20:01:30.183 [error] [File Watcher] Unexpected error: Bad file descriptor (EUNKNOWN) (path: /home/course/hpc/users)
+2025-04-29 20:01:30.183 [error] [File Watcher (universal)] Bad file descriptor
+2025-04-29 20:01:32.202 [error] CodeExpectedError: Could not find pty 13 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateTitle (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1839)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2025-04-29 20:01:32.204 [error] CodeExpectedError: Could not find pty 13 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateIcon (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1889)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2025-04-29 20:01:55.369 [info] [<unknown>][d176e003][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-29 20:01:55.592 [info] [<unknown>][5cdd0eef][ExtensionHostConnection] <2541735> Extension Host Process exited with code: 0, signal: null.
+2025-04-29 20:01:55.592 [info] Cancelling previous shutdown timeout
+2025-04-29 20:01:55.592 [info] Last EH closed, waiting before shutting down
+2025-04-29 20:02:05.738 [info] [<unknown>][d94c9fef][ExtensionHostConnection] New connection established.
+2025-04-29 20:02:05.745 [info] [<unknown>][d94c9fef][ExtensionHostConnection] <2543674> Launched Extension Host Process.
+2025-04-29 20:02:05.750 [info] [<unknown>][b55d9530][ManagementConnection] New connection established.
+2025-04-29 20:02:08.085 [error] CodeExpectedError: Could not find pty 4 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateTitle (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1839)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2025-04-29 20:06:55.596 [info] New EH opened, aborting shutdown
+2025-04-29 20:06:55.599 [error] Error: Unexpected SIGPIPE
+    at process.<anonymous> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:183:1060)
+    at process.emit (node:events:530:35)
+2025-04-29 20:54:42.688 [info] [<unknown>][b55d9530][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-29 20:54:42.829 [info] [<unknown>][d94c9fef][ExtensionHostConnection] <2543674> Extension Host Process exited with code: 0, signal: null.
+2025-04-29 20:54:42.830 [info] Last EH closed, waiting before shutting down
+2025-04-29 20:59:42.834 [info] Last EH closed, shutting down
