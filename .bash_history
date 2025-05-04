@@ -1333,3 +1333,7 @@ make UNROLL_N=8
 make clean
 make UNROLL_N=16
 ./main
+ls
+git add .
+git commit -am "sync"
+git push
