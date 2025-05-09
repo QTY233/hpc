@@ -390,7 +390,7 @@
 		"update": "cd ../vscode && npm run update-localization-extension zh-hans"
 	},
 	"__metadata": {
-		"installedTimestamp": 1744859613971,
+		"installedTimestamp": 1746753858428,
 		"targetPlatform": "undefined",
 		"size": 1437629
 	}

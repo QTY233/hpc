@@ -3,158 +3,252 @@
 // Brute Force APSP Implementation:
 
 #include "apsp.h"
-#define MAX_P_SIZE 32
+#define MAX_P_SIZE (64)
+#define Max_p_SIZE (4)
+
+#define INF (400000)
 
 namespace {
-__global__ void diag_floyed(int n, int p, int p_size, int *graph) {
-    int i = p * p_size + threadIdx.y;
-    int j = p * p_size + threadIdx.x;
+__global__ void diag_floyed(int n, int p, int *graph) {
+    int tx = threadIdx.x * Max_p_SIZE;
+    int ty = threadIdx.y * Max_p_SIZE;
+    int i = p * MAX_P_SIZE + ty;
+    int j = p * MAX_P_SIZE + tx;
 
-    __shared__ int shared_int[MAX_P_SIZE][MAX_P_SIZE + 1];
-    if (i < n && j < n) shared_int[threadIdx.y][threadIdx.x] = graph[i * n + j];
-    else shared_int[threadIdx.y][threadIdx.x] = INT_MAX;
-    __syncthreads();
-
-    for (int k = p * p_size, k_off = 0; k < (p + 1) * p_size; ++k, ++k_off) {
-        if (i < n && j < n && k < n) 
-            shared_int[threadIdx.y][threadIdx.x] = min(shared_int[threadIdx.y][threadIdx.x], shared_int[k_off][threadIdx.x] + shared_int[threadIdx.y][k_off]);
-        __syncthreads();
-    }
-    if (i < n && j < n) {
-        graph[i * n + j] = shared_int[threadIdx.y][threadIdx.x];
-    }
-    __syncthreads();
-}
-
-__global__ void cross_floyed(int n, int p, int p_size, int *graph) {
-    if (blockIdx.x == p) return;
-    int tx = threadIdx.x;
-    int ty = threadIdx.y;
-    bool is_row = (blockIdx.y == 1);
-    int i = is_row ? p * p_size + ty : blockIdx.x * p_size + ty;
-    int j = is_row ? blockIdx.x * p_size + tx : p * p_size + tx;
-
-    __shared__ int shared_pivot_row[MAX_P_SIZE][MAX_P_SIZE + 1];
-    __shared__ int shared_pivot_col[MAX_P_SIZE][MAX_P_SIZE + 1];
-
-    if ((p * p_size + ty) < n && j < n)
-        shared_pivot_col[tx][ty] = graph[(p * p_size + ty) * n + j];
-    else
-        shared_pivot_col[tx][ty] = INT_MAX;
-    if (i < n && (p * p_size + tx) < n)
-        shared_pivot_row[ty][tx] = graph[i * n + p * p_size + tx];
-    else
-        shared_pivot_row[ty][tx] = INT_MAX;
-
-    __syncthreads();
-
-    if (i < n && j < n) {
-        int val = graph[i * n + j];
-
-        for (int k = 0; k < p_size; ++k) if (p * p_size + k < n) {
-            int temp;
-            if (is_row)
-                temp = shared_pivot_row[ty][k] + shared_pivot_col[tx][k];
+    __shared__ int shared_int[MAX_P_SIZE][MAX_P_SIZE];
+    register int local[Max_p_SIZE][Max_p_SIZE];
+    #pragma unroll
+    for (int k = 0; k < Max_p_SIZE; ++k) {
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            if (k + i < n && l + j < n) 
+                local[k][l] = graph[(k + i) * n + (l + j)];
             else
-                temp = shared_pivot_row[ty][k] + shared_pivot_col[tx][k];
-            val = min(val, temp);
+                local[k][l] = INF;
         }
-
-        graph[i * n + j] = val;
+    }
+    #pragma unroll
+    for (int k = 0; k < Max_p_SIZE; ++k) {
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) 
+            shared_int[ty + k][tx + l] = local[k][l];
+    }__syncthreads();
+    
+    register int need_ik[Max_p_SIZE], need_kj[Max_p_SIZE];
+    for (int k_off = 0; k_off < MAX_P_SIZE; ++k_off) {
+        if (p * MAX_P_SIZE + k_off < n) {
+            #pragma unroll
+            for (int l = 0; l < Max_p_SIZE; ++l) 
+                need_ik[l] = shared_int[ty + l][k_off];
+            #pragma unroll
+            for (int l = 0; l < Max_p_SIZE; ++l) 
+                need_kj[l] = shared_int[k_off][tx + l];
+            
+            #pragma unroll
+            for (int l = 0; l < Max_p_SIZE; ++l) {
+                #pragma unroll
+                for (int m = 0; m < Max_p_SIZE; ++m) // if (i + l < n && j + m < n) 
+                    local[l][m] = min(local[l][m], need_ik[l] + need_kj[m]);
+            }
+            #pragma unroll
+            for (int l = 0; l < Max_p_SIZE; ++l) {
+                #pragma unroll
+                for (int m = 0; m < Max_p_SIZE; ++m) 
+                    shared_int[ty + l][tx + m] = local[l][m];
+            }
+        } __syncthreads();
+    }
+    #pragma unroll
+    for (int k = 0; k < Max_p_SIZE; ++k) {
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) 
+            if (k + i < n && l + j < n) 
+                graph[(k + i) * n + (l + j)] = local[k][l];
     }
 }
 
-// __global__ void cross_floyed_col(int n, int p, int p_size, int *graph) {
-//     if (blockIdx.x == p) return;
-//     int i = blockIdx.x * p_size + threadIdx.y;
-//     int j = p * p_size + threadIdx.x;
-//     if (i >= n || j >= n) return;
+__global__ void cross_floyed(int n, int p, int *graph) {
+// __global__ void cross_floyed(int n, int p, int *graph, int *corss_row, int *corss_col) {
+    if (blockIdx.x == p) return;
+    int tx = threadIdx.x * Max_p_SIZE;
+    int ty = threadIdx.y * Max_p_SIZE;
+    bool is_row = (blockIdx.y == 1);
+    int i = is_row ? p * MAX_P_SIZE + ty : blockIdx.x * MAX_P_SIZE + ty;
+    int j = is_row ? blockIdx.x * MAX_P_SIZE + tx : p * MAX_P_SIZE + tx;
 
-//     __shared__ int shared_col[MAX_P_SIZE];
+    __shared__ int shared_pivot_row[MAX_P_SIZE][MAX_P_SIZE];
+    __shared__ int shared_pivot_col[MAX_P_SIZE][MAX_P_SIZE];
+    register int local[Max_p_SIZE][Max_p_SIZE];
+    #pragma unroll
+    for (int k = 0; k < Max_p_SIZE; ++k) {
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            int tmp = p * MAX_P_SIZE + ty + k;
+            if (tmp < n && j + l < n) shared_pivot_col[ty + k][tx + l] = graph[tmp * n + j + l];
+            else shared_pivot_col[ty + k][tx + l] = INF;
+        }
+    }
+    #pragma unroll
+    for (int k = 0; k < Max_p_SIZE; ++k) {
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            int tmp = p * MAX_P_SIZE + tx + l;
+            if (i + k < n && tmp < n) shared_pivot_row[ty + k][tx + l] = graph[(i + k) * n + tmp];
+            else shared_pivot_row[ty + k][tx + l] = INF;
+        }
+    }
+    #pragma unroll
+    for (int k = 0; k < Max_p_SIZE; ++k) {
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            local[k][l] = is_row ? shared_pivot_col[ty + k][tx + l] : shared_pivot_row[ty + k][tx + l];
+        }
+    }
+    __syncthreads();
+    
+    register int need_ik[Max_p_SIZE], need_kj[Max_p_SIZE];
+    for (int k = 0; k < MAX_P_SIZE; ++k) {
+        if (p * MAX_P_SIZE + k >= n) break; 
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            need_ik[l] = shared_pivot_row[ty + l][k];
+        }
+        
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            need_kj[l] = shared_pivot_col[k][tx + l];
+        }
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            #pragma unroll
+            for (int m = 0; m < Max_p_SIZE; ++m) // if (i + l < n && j + m < n) {
+                local[l][m] = min(local[l][m], need_ik[l] + need_kj[m]);
+            // }
+        }
+    }
 
-//     for (int k = p * p_size; k < (p + 1) * p_size; ++k) {
-//         if (k >= n) break;
+    for (int k = 0; k < Max_p_SIZE; ++k) 
+        for (int l = 0; l < Max_p_SIZE; ++l) 
+            if (k + i < n && l + j < n) 
+                graph[(k + i) * n + (l + j)] = local[k][l];
+                
+    // for (int k = 0; k < Max_p_SIZE; ++k) 
+    //     for (int l = 0; l < Max_p_SIZE; ++l) {
+    //         if (is_row) corss_col[(ty + k) * n + (j + l)] = local[k][l];
+    //         else corss_row[(i + k) * MAX_P_SIZE + (tx + l)] = local[k][l];
+    //     }
+}
 
-//         if (threadIdx.y == 0) shared_col[threadIdx.x] = graph[k * n + j];
-//         __syncthreads();
-
-//         int d_ik = graph[i * n + k];
-//         int d_kj = shared_col[threadIdx.x];
-//         int &d_ij = graph[i * n + j];
-//         if (d_ik + d_kj < d_ij)
-//             d_ij = d_ik + d_kj;
-//         __syncthreads();
-//     }
-// }
-
-// __global__ void cross_floyed_row(int n, int p, int p_size, int *graph) {
-//     if (blockIdx.x == p) return;
-//     int i = p * p_size + threadIdx.y;
-//     int j = blockIdx.x * p_size + threadIdx.x;
-//     if (i >= n || j >= n) return;
-
-//     __shared__ int shared_row[MAX_P_SIZE];
-
-//     for (int k = p * p_size; k < (p + 1) * p_size; ++k) {
-//         if (k >= n) break;
-
-//         if (threadIdx.x == 0) shared_row[threadIdx.y] = graph[i * n + k];
-//         __syncthreads();
-
-//         int d_ik = shared_row[threadIdx.y];
-//         int d_kj = graph[k * n + j];
-//         int &d_ij = graph[i * n + j];
-//         if (d_ik + d_kj < d_ij)
-//             d_ij = d_ik + d_kj;
-//         __syncthreads();
-//     }
-// }
-
-__global__ void others_floyed(int n, int p, int p_size, int *graph) {
+// __global__ void others_floyed(int n, int p, int *graph, int *corss_row, int *corss_col) {
+__global__ void others_floyed(int n, int p, int *graph) {
     if (blockIdx.y == p || blockIdx.x == p) return;
-    int i = blockIdx.y * p_size + threadIdx.y;
-    int j = blockIdx.x * p_size + threadIdx.x;
-    if (i >= n || j >= n) return;
 
-    __shared__ int shared_row[MAX_P_SIZE];
-    __shared__ int shared_col[MAX_P_SIZE];
+    int tx = threadIdx.x * Max_p_SIZE;
+    int ty = threadIdx.y * Max_p_SIZE;
 
-    for (int k = p * p_size; k < (p + 1) * p_size; ++k) {
-        if (k >= n) break;
+    int i = blockIdx.y * MAX_P_SIZE + ty;
+    int j = blockIdx.x * MAX_P_SIZE + tx;
 
-        shared_row[threadIdx.y] = graph[i * n + k];
-        shared_col[threadIdx.x] = graph[k * n + j];
-        __syncthreads();
+    __shared__ int shared_row[MAX_P_SIZE][MAX_P_SIZE];
+    __shared__ int shared_col[MAX_P_SIZE][MAX_P_SIZE];
 
-        int d_ik = shared_row[threadIdx.y];
-        int d_kj = shared_col[threadIdx.x];
-        int &d_ij = graph[i * n + j];
-        if (d_ik + d_kj < d_ij)
-            d_ij = d_ik + d_kj;
-
-        __syncthreads();
+    register int local[Max_p_SIZE][Max_p_SIZE];
+    #pragma unroll
+    for (int k = 0; k < Max_p_SIZE; ++k) {
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            // shared_row[ty + k][tx + l] = corss_row[(i + k) * MAX_P_SIZE + (tx + l)];
+            if (i + k < n && (p * MAX_P_SIZE + tx + l) < n)
+                shared_row[ty + k][tx + l] = graph[(i + k) * n + p * MAX_P_SIZE + tx + l];
+            else
+                shared_row[ty + k][tx + l] = INF;
+        }
     }
-}
+    #pragma unroll
+    for (int k = 0; k < Max_p_SIZE; ++k) {
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            // shared_col[ty + k][tx + l] = corss_col[(ty + k) * n + (j + l)];
+            if ((p * MAX_P_SIZE + ty) + k < n && j + l < n)
+                shared_col[ty + k][tx + l] = graph[(p * MAX_P_SIZE + ty + k) * n + j + l];
+            else
+                shared_col[ty + k][tx + l] = INF;
+        }
+    }
+    for (int k = 0; k < Max_p_SIZE; ++k) 
+        for (int l = 0; l < Max_p_SIZE; ++l) 
+            local[k][l] = (i + k < n && j + l < n) ? graph[(i + k) * n + j + l] : INF;
+        
+    
+    __syncthreads();
 
+    register int need_ik[Max_p_SIZE], need_kj[Max_p_SIZE];
+    for (int k_off = 0; k_off < MAX_P_SIZE; ++k_off) {
+        if (p * MAX_P_SIZE + k_off >= n) break;
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            need_ik[l] = shared_row[ty + l][k_off];
+        }
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            need_kj[l] = shared_col[k_off][tx + l];
+        }
+        #pragma unroll
+        for (int l = 0; l < Max_p_SIZE; ++l) {
+            #pragma unroll
+            for (int m = 0; m < Max_p_SIZE; ++m) // if (i + l < n && j + m < n) {
+                local[l][m] = min(local[l][m], need_ik[l] + need_kj[m]);
+        }
+            // }
+    }
+
+    for (int k = 0; k < Max_p_SIZE; ++k) 
+        for (int l = 0; l < Max_p_SIZE; ++l) 
+            if (k + i < n && l + j < n) 
+                graph[(k + i) * n + (l + j)] = local[k][l];
+}
 }
 
 void apsp(int n, /* device */ int *graph) {
     int blk_size = (n - 1) / MAX_P_SIZE + 1;
+    // int *corss_row, *corss_col;
+    // cudaMalloc(&corss_row, blk_size * MAX_P_SIZE * MAX_P_SIZE * sizeof(int));
+    // cudaMalloc(&corss_col, blk_size * MAX_P_SIZE * MAX_P_SIZE * sizeof(int));
     for (int p = 0; p * MAX_P_SIZE < n; p++) {
-        dim3 thr(MAX_P_SIZE, MAX_P_SIZE);
-        diag_floyed<<<1, thr>>>(n, p, MAX_P_SIZE, graph);
+        dim3 thr_new(MAX_P_SIZE / Max_p_SIZE, MAX_P_SIZE / Max_p_SIZE);
+        // dim3 thr(MAX_P_SIZE, MAX_P_SIZE);
+        diag_floyed<<<1, thr_new>>>(n, p, graph);
         cudaDeviceSynchronize();
-        // cross_floyed_col<<<blk_size, thr>>>(n, p, MAX_P_SIZE, graph);
-        // cross_floyed_row<<<blk_size, thr>>>(n, p, MAX_P_SIZE, graph);
-        // cudaDeviceSynchronize();
         dim3 blk1(blk_size, 2);
-        cross_floyed<<<blk1, thr>>>(n, p, MAX_P_SIZE, graph);
+        cross_floyed<<<blk1, thr_new>>>(n, p, graph);
+        // cross_floyed<<<blk1, thr_new>>>(n, p, graph, corss_row, corss_col);
         cudaDeviceSynchronize();
         dim3 blk(blk_size, blk_size);
-        others_floyed<<<blk, thr>>>(n, p, MAX_P_SIZE, graph);
+        // others_floyed<<<blk, thr_new>>>(n, p, graph, corss_row, corss_col);
+        others_floyed<<<blk, thr_new>>>(n, p, graph);
         cudaDeviceSynchronize();
     }
 }
+
+// namespace {
+
+// __global__ void kernel(int n, int k, int *graph) {
+//     auto i = blockIdx.y * blockDim.y + threadIdx.y;
+//     auto j = blockIdx.x * blockDim.x + threadIdx.x;
+//     if (i < n && j < n && i != k && j != k) {
+//         graph[i * n + j] = min(graph[i * n + j], graph[i * n + k] + graph[k * n + j]);
+//     }
+// }
+
+// }
+
+// void apsp(int n, /* device */ int *graph) {
+//     for (int k = 0; k < n; k++) {
+//         dim3 thr(32, 32);
+//         dim3 blk((n - 1) / 32 + 1, (n - 1) / 32 + 1);
+//         kernel<<<blk, thr>>>(n, k, graph);
+//     }
+// }
 
 // namespace {
 

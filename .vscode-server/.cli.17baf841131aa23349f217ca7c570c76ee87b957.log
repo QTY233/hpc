@@ -1,4 +1,5 @@
-Listening on 127.0.0.1:46507
-[2025-05-04 15:18:26] info Disposed of connection to running server.
-[2025-05-04 15:18:26] info Checking /home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/log.txt and /home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/pid.txt for a running server...
-[2025-05-04 15:18:26] info Found running server (pid=3976038)
+Listening on 127.0.0.1:33051
+[2025-05-09 09:23:54] info Disposed of connection to running server.
+[2025-05-09 09:23:54] info Checking /home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/log.txt and /home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/pid.txt for a running server...
+[2025-05-09 09:23:54] info Starting server...
+[2025-05-09 09:23:54] info Server started
