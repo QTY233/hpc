@@ -1,0 +1,40 @@
+2025-05-07 19:27:36.488 [info] Can't use the Electron fetcher in this environment.
+2025-05-07 19:27:36.488 [info] Using the Node fetch fetcher.
+2025-05-07 19:27:36.488 [info] Initializing Git extension service.
+2025-05-07 19:27:36.488 [info] Successfully activated the vscode.git extension.
+2025-05-07 19:27:36.488 [info] Enablement state of the vscode.git extension: true.
+2025-05-07 19:27:36.488 [info] Successfully registered Git commit message provider.
+2025-05-07 19:27:36.608 [info] Logged in as QTY233
+2025-05-07 19:27:39.543 [info] Got Copilot token for QTY233
+2025-05-07 19:27:39.895 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-07 19:27:39.895 [info] GitHub.vscode-pull-request-github extension is not yet activated.
+2025-05-07 19:27:39.933 [info] Registering default platform agent...
+2025-05-07 19:27:42.607 [info] Fetched model metadata in 3034ms e9049236-caf7-40b4-9b8a-445a4addf122
+2025-05-07 19:27:42.858 [info] activationBlocker from 'languageModelAccess' took for 5605ms
+2025-05-07 19:57:43.856 [info] Logged in as QTY233
+2025-05-07 19:57:46.570 [info] Got Copilot token for QTY233
+2025-05-07 19:57:46.655 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-07 20:27:46.791 [info] Logged in as QTY233
+2025-05-07 20:27:49.174 [info] Got Copilot token for QTY233
+2025-05-07 20:27:49.247 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-07 20:57:49.382 [info] Logged in as QTY233
+2025-05-07 20:57:51.561 [info] Got Copilot token for QTY233
+2025-05-07 20:57:51.638 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-07 21:27:51.880 [info] Logged in as QTY233
+2025-05-07 21:27:54.683 [info] Got Copilot token for QTY233
+2025-05-07 21:27:54.808 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-07 21:57:54.992 [info] Logged in as QTY233
+2025-05-07 21:57:57.159 [info] Got Copilot token for QTY233
+2025-05-07 21:57:57.365 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-07 22:27:57.489 [info] Logged in as QTY233
+2025-05-07 22:27:59.657 [info] Got Copilot token for QTY233
+2025-05-07 22:27:59.844 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-07 22:57:59.968 [info] Logged in as QTY233
+2025-05-07 22:58:02.143 [info] Got Copilot token for QTY233
+2025-05-07 22:58:02.302 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-07 23:28:02.421 [info] Logged in as QTY233
+2025-05-07 23:28:04.744 [info] Got Copilot token for QTY233
+2025-05-07 23:28:04.802 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-07 23:58:04.920 [info] Logged in as QTY233
+2025-05-07 23:58:07.047 [info] Got Copilot token for QTY233
+2025-05-07 23:58:07.108 [info] copilot token chat_enabled: true, sku: free_limited_copilot

@@ -1,0 +1,30 @@
+2025-05-07 19:26:44.512 [info] 
+
+
+
+
+2025-05-07 19:26:44.527 [info] Extension host agent started.
+2025-05-07 19:26:44.589 [info] [<unknown>][6463c3b3][ManagementConnection] New connection established.
+2025-05-07 19:26:44.601 [info] [<unknown>][e2fe9ce8][ExtensionHostConnection] New connection established.
+2025-05-07 19:26:44.757 [info] Deleted marked for removal extension from disk github.copilot /home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-1.312.0
+2025-05-07 19:26:44.953 [info] [<unknown>][e2fe9ce8][ExtensionHostConnection] <2684473> Launched Extension Host Process.
+2025-05-07 19:26:45.031 [info] [<unknown>][e2fe9ce8][ExtensionHostConnection] <2684473><stderr> Error reading NLS messages file /home/course/hpc/users/2022012388/.vscode-server/data/clp/e29fa1bf597cf39176d8202ce543e6d3.zh-cn/17baf841131aa23349f217ca7c570c76ee87b957/nls.messages.json: Error: ENOENT: no such file or directory, open '/home/course/hpc/users/2022012388/.vscode-server/data/clp/e29fa1bf597cf39176d8202ce543e6d3.zh-cn/17baf841131aa23349f217ca7c570c76ee87b957/nls.messages.json'
+
+2025-05-07 19:27:20.561 [info] [<unknown>][6463c3b3][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-05-07 19:27:20.723 [info] [<unknown>][e2fe9ce8][ExtensionHostConnection] <2684473> Extension Host Process exited with code: 0, signal: null.
+2025-05-07 19:27:20.724 [info] Cancelling previous shutdown timeout
+2025-05-07 19:27:20.724 [info] Last EH closed, waiting before shutting down
+2025-05-07 19:27:30.402 [info] [<unknown>][1930a730][ManagementConnection] New connection established.
+2025-05-07 19:27:30.412 [info] [<unknown>][269a9272][ExtensionHostConnection] New connection established.
+2025-05-07 19:27:30.420 [info] [<unknown>][269a9272][ExtensionHostConnection] <2685772> Launched Extension Host Process.
+2025-05-07 19:27:30.494 [info] [<unknown>][269a9272][ExtensionHostConnection] <2685772><stderr> Error reading NLS messages file /home/course/hpc/users/2022012388/.vscode-server/data/clp/e29fa1bf597cf39176d8202ce543e6d3.zh-cn/17baf841131aa23349f217ca7c570c76ee87b957/nls.messages.json: Error: ENOENT: no such file or directory, open '/home/course/hpc/users/2022012388/.vscode-server/data/clp/e29fa1bf597cf39176d8202ce543e6d3.zh-cn/17baf841131aa23349f217ca7c570c76ee87b957/nls.messages.json'
+
+2025-05-07 19:32:20.728 [info] New EH opened, aborting shutdown
+2025-05-07 19:32:20.734 [error] Error: Unexpected SIGPIPE
+    at process.<anonymous> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/server-main.js:183:1060)
+    at process.emit (node:events:530:35)
+2025-05-08 00:00:37.143 [info] [<unknown>][1930a730][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+2025-05-08 03:00:17.877 [info] [<unknown>][269a9272][ExtensionHostConnection] <2685772> Extension Host Process exited with code: 0, signal: null.
+2025-05-08 03:00:17.880 [info] Last EH closed, waiting before shutting down
+2025-05-08 03:00:41.751 [info] [<unknown>][1930a730][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.
+2025-05-08 03:05:17.882 [info] Last EH closed, shutting down

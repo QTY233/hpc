@@ -1,0 +1,23 @@
+2025-05-08 12:30:52.941 [info] Can't use the Electron fetcher in this environment.
+2025-05-08 12:30:52.941 [info] Using the Node fetch fetcher.
+2025-05-08 12:30:52.941 [info] Initializing Git extension service.
+2025-05-08 12:30:52.941 [info] Successfully activated the vscode.git extension.
+2025-05-08 12:30:52.941 [info] Enablement state of the vscode.git extension: true.
+2025-05-08 12:30:52.941 [info] Successfully registered Git commit message provider.
+2025-05-08 12:30:54.335 [info] Logged in as QTY233
+2025-05-08 12:30:56.609 [info] Got Copilot token for QTY233
+2025-05-08 12:30:56.982 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-08 12:30:56.982 [info] GitHub.vscode-pull-request-github extension is not yet activated.
+2025-05-08 12:30:57.018 [info] Registering default platform agent...
+2025-05-08 12:30:59.698 [info] Fetched model metadata in 3060ms a6ab11b4-9be7-4da4-9e6b-b0dd6fa127d2
+2025-05-08 12:30:59.954 [info] activationBlocker from 'languageModelAccess' took for 5824ms
+2025-05-08 13:01:01.172 [info] Logged in as QTY233
+2025-05-08 13:01:03.632 [info] Got Copilot token for QTY233
+2025-05-08 13:01:03.845 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-08 13:31:04.120 [info] Logged in as QTY233
+2025-05-08 13:31:06.299 [info] Got Copilot token for QTY233
+2025-05-08 13:31:06.389 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-08 13:46:07.814 [info] Fetched model metadata in 1360ms 066662bf-61b6-4090-aad9-2717a2522761
+2025-05-08 14:01:08.024 [info] Logged in as QTY233
+2025-05-08 14:01:10.281 [info] Got Copilot token for QTY233
+2025-05-08 14:01:10.359 [info] copilot token chat_enabled: true, sku: free_limited_copilot

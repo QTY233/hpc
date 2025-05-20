@@ -1633,3 +1633,109 @@ srun -N 1 --gres=gpu:1 ./benchmark 100
 make
 srun -N 1 --gres=gpu:1 ./benchmark 100
 srun -N 1 --gres=gpu:1 ./benchmark 5000
+cd PA2
+spack load cuda && spack load gcc@10.2.0
+spack
+spack load cuda && spack load gcc@10.2.0
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+srun -N 1 --gres=gpu:1 ./benchmark 100
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+srun -N 1 --gres=gpu:1 ./benchmark 100
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+srun -N 1 --gres=gpu:1 ./benchmark 100
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+srun -N 1 --gres=gpu:1 ./benchmark 100
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 100
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+srun -N 1 --gres=gpu:1 ./benchmark 200
+srun -N 1 --gres=gpu:1 ./benchmark 400
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+make
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+git add .
+git commit -am "lab2"
+git push

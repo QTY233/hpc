@@ -1,0 +1,26 @@
+2025-05-06 15:13:31.660 [info] Can't use the Electron fetcher in this environment.
+2025-05-06 15:13:31.660 [info] Using the Node fetch fetcher.
+2025-05-06 15:13:31.660 [info] Initializing Git extension service.
+2025-05-06 15:13:31.660 [info] Successfully activated the vscode.git extension.
+2025-05-06 15:13:31.660 [info] Enablement state of the vscode.git extension: true.
+2025-05-06 15:13:31.660 [info] Successfully registered Git commit message provider.
+2025-05-06 15:13:33.474 [info] Logged in as QTY233
+2025-05-06 15:13:35.872 [info] Got Copilot token for QTY233
+2025-05-06 15:13:36.396 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-06 15:13:36.396 [info] GitHub.vscode-pull-request-github extension is not yet activated.
+2025-05-06 15:13:36.435 [info] Registering default platform agent...
+2025-05-06 15:13:39.232 [info] Fetched model metadata in 3320ms efbe6870-e1a4-4b1b-aad8-f04f33e2367e
+2025-05-06 15:13:39.482 [info] activationBlocker from 'languageModelAccess' took for 6643ms
+2025-05-06 15:43:40.534 [info] Logged in as QTY233
+2025-05-06 15:43:42.673 [info] Got Copilot token for QTY233
+2025-05-06 15:43:43.022 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-06 15:43:43.744 [info] Fetched model metadata in 1052ms d80e22bd-d33e-40fa-817d-ff8c2f53ae18
+2025-05-06 16:13:44.277 [info] Logged in as QTY233
+2025-05-06 16:13:46.444 [info] Got Copilot token for QTY233
+2025-05-06 16:13:46.792 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-06 16:13:47.746 [info] Fetched model metadata in 1286ms 0feb9e8b-9264-4755-991f-ab536d9847e1
+2025-05-06 16:28:49.057 [info] Fetched model metadata in 1100ms 11a87d52-b73a-45e1-8bef-cfb3722c7972
+2025-05-06 16:43:49.322 [info] Logged in as QTY233
+2025-05-06 16:43:51.506 [info] Got Copilot token for QTY233
+2025-05-06 16:43:51.855 [info] copilot token chat_enabled: true, sku: free_limited_copilot
+2025-05-06 16:43:52.626 [info] Fetched model metadata in 1106ms e2aba5bd-b707-436c-b252-3a3302c830dd

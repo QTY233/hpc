@@ -1,0 +1,70 @@
+2025-05-09 09:23:54.424 [info] 
+
+
+
+
+2025-05-09 09:23:54.439 [info] Extension host agent started.
+2025-05-09 09:23:54.500 [info] [<unknown>][042133b9][ExtensionHostConnection] New connection established.
+2025-05-09 09:23:54.507 [info] [<unknown>][19f1e767][ManagementConnection] New connection established.
+2025-05-09 09:23:54.850 [info] [<unknown>][042133b9][ExtensionHostConnection] <2309660> Launched Extension Host Process.
+2025-05-09 09:23:56.898 [error] CodeExpectedError: Could not find pty 5 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateTitle (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1839)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2025-05-09 09:23:56.900 [error] CodeExpectedError: Could not find pty 5 on pty host
+    at M.W (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at M.updateIcon (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1889)
+    at N.s.<computed> (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ol.s (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at ol.q (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///home/course/hpc/users/2022012388/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2025-05-09 09:23:59.248 [info] Getting Manifest... github.copilot
+2025-05-09 09:24:00.201 [info] Installing extension: github.copilot {"productVersion":{"version":"1.99.3","date":"2025-04-15T23:18:46.076Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"donotVerifySignature":false,"context":{"clientTargetPlatform":"win32-x64"},"profileLocation":{"$mid":1,"fsPath":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","external":"file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","path":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","scheme":"file"}}
+2025-05-09 09:24:01.869 [info] Getting Manifest... github.copilot-chat
+2025-05-09 09:24:05.015 [info] Extension signature verification result for github.copilot: Success. Internal Code: 0. Executed: true. Duration: 1860ms.
+2025-05-09 09:24:05.817 [info] Extracted extension to file:///home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-1.317.0: github.copilot
+2025-05-09 09:24:05.891 [info] Renamed to /home/course/hpc/users/2022012388/.vscode-server/extensions/github.copilot-1.317.0
+2025-05-09 09:24:05.949 [info] Marked extension as removed github.copilot-1.314.0
+2025-05-09 09:24:05.961 [info] Extension installed successfully: github.copilot file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json
+2025-05-09 09:24:13.130 [info] Getting Manifest... ms-ceintl.vscode-language-pack-zh-hans
+2025-05-09 09:24:13.131 [info] Getting Manifest... ms-ceintl.vscode-language-pack-zh-hans
+2025-05-09 09:24:13.328 [info] Installing extension: ms-ceintl.vscode-language-pack-zh-hans {"productVersion":{"version":"1.100.0","date":"2025-05-07T12:50:07.413Z"},"pinned":false,"operation":3,"isApplicationScoped":true,"donotVerifySignature":false,"context":{"clientTargetPlatform":"win32-x64"},"profileLocation":{"$mid":1,"fsPath":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","external":"file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","path":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","scheme":"file"}}
+2025-05-09 09:24:13.334 [info] Extension is already requested to install ms-ceintl.vscode-language-pack-zh-hans file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json
+2025-05-09 09:24:16.530 [info] Extension signature verification result for ms-ceintl.vscode-language-pack-zh-hans: Success. Internal Code: 0. Executed: true. Duration: 2103ms.
+2025-05-09 09:24:16.651 [info] Extracted extension to file:///home/course/hpc/users/2022012388/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.100.2025050709: ms-ceintl.vscode-language-pack-zh-hans
+2025-05-09 09:24:16.675 [info] Renamed to /home/course/hpc/users/2022012388/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.100.2025050709
+2025-05-09 09:24:16.702 [info] Marked extension as removed ms-ceintl.vscode-language-pack-zh-hans-1.99.2025041609
+2025-05-09 09:24:16.702 [info] Adding language packs from the extension ms-ceintl.vscode-language-pack-zh-hans
+2025-05-09 09:24:16.762 [info] Extension installed successfully: ms-ceintl.vscode-language-pack-zh-hans file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json
+2025-05-09 09:24:18.207 [info] Downloaded extension to file:///home/course/hpc/users/2022012388/.vscode-server/data/CachedExtensionVSIXs/ae512692-20d8-467b-a8f0-ab747057c0b9
+2025-05-09 09:24:18.211 [info] Installing extension: ms-ceintl.vscode-language-pack-zh-hans {"productVersion":{"version":"1.100.0","date":"2025-05-07T12:50:07.413Z"},"pinned":false,"operation":3,"isApplicationScoped":true,"donotVerifySignature":false,"donotIncludePackAndDependencies":true,"keepExisting":true,"profileLocation":{"$mid":1,"fsPath":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","external":"file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","path":"/home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json","scheme":"file"}}
+2025-05-09 09:24:18.212 [info] Installing the extension without checking dependencies and pack ms-ceintl.vscode-language-pack-zh-hans
+2025-05-09 09:24:18.234 [info] Removed the extension from removed list: ms-ceintl.vscode-language-pack-zh-hans
+2025-05-09 09:24:18.261 [info] Deleted existing extension from disk ms-ceintl.vscode-language-pack-zh-hans /home/course/hpc/users/2022012388/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.99.2025041609
+2025-05-09 09:24:18.428 [info] Extracted extension to file:///home/course/hpc/users/2022012388/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.99.2025041609: ms-ceintl.vscode-language-pack-zh-hans
+2025-05-09 09:24:18.445 [info] Renamed to /home/course/hpc/users/2022012388/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.99.2025041609
+2025-05-09 09:24:18.469 [info] Marked extension as removed ms-ceintl.vscode-language-pack-zh-hans-1.100.2025050709
+2025-05-09 09:24:18.478 [info] Adding language packs from the extension ms-ceintl.vscode-language-pack-zh-hans
+2025-05-09 09:24:18.528 [info] Extension installed successfully: ms-ceintl.vscode-language-pack-zh-hans file:///home/course/hpc/users/2022012388/.vscode-server/extensions/extensions.json
+2025-05-09 09:28:54.439 [info] New EH opened, aborting shutdown
+2025-05-09 17:55:02.474 [info] [<unknown>][19f1e767][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-05-09 17:55:02.806 [info] [<unknown>][042133b9][ExtensionHostConnection] <2309660> Extension Host Process exited with code: 0, signal: null.
+2025-05-09 17:55:02.806 [info] Last EH closed, waiting before shutting down
+2025-05-09 18:00:02.809 [info] Last EH closed, shutting down
