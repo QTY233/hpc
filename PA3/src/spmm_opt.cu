@@ -10,9 +10,7 @@ __global__ void spmm_kernel_placeholder(int *ptr, int *idx, float *val, float *v
     if (end <= begin) return;
     float res = 0;
     for (int p = begin; p < end; p++) {
-        // res += A(i, k) * B(k, j)
-        int k = idx[p];
-        res += val[p] * B(k, j);
+        res += val[p] * B(idx[p], j);
     }
     C(i, j) = res;
 
