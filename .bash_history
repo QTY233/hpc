@@ -1745,3 +1745,38 @@ cp -R /home/course/hpc/assignments/2025/PA3/ ~
 git add .
 git commit -am "pa3 init"
 git push
+git pull
+git add .
+git commit -am "456"
+git pull
+cd PA3
+ls
+spack
+spack load gcc@10.2.0spack load gcc@10.2.0
+spack load gcc@10.2.0
+spack load cuda
+spack load cmake@3.24.4
+mkdir build
+cd build
+cmake ..
+make -j4
+cd ..
+git pull
+cd build
+cmake ..
+make -j4
+cd ..
+git pull
+cd build
+cmake ..
+make -j4
+srun -N 1 --gres=gpu:1 ./test/unit_tests --dataset <datasetname> --len 32 --datadir ~/PA3/data/
+cd ..
+ls
+srun -N 1 --gres=gpu:1 ./test/unit_tests --dataset <datasetname> --len 32 --datadir ~/PA3/data/
+srun -N 1 --gres=gpu:1 ~/PA3/script/run_all.sh
+cp -r /home/course/hpc/assignments/2025/exp8 ~/
+cd ~/exp8/
+source /opt/intel/oneapi/setvars.sh
+./run.sh 2022012388
+LD_PRELOAD=~/exp8/ipm/lib/libipm.so ./run.sh 2022012388

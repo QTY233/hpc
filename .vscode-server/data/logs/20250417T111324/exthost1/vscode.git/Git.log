@@ -1,5 +1,0 @@
-2025-04-17 11:13:35.774 [info] [main] 日志级别: Info
-2025-04-17 11:13:35.774 [info] [main] 正在验证在以下位置找到的 git: "git"
-2025-04-17 11:13:35.774 [info] [main] 使用来自 "git" 的 git "2.39.5"
-2025-04-17 11:13:35.774 [info] [Model][doInitialScan] Initial repository scan started
-2025-04-17 11:13:35.775 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
