@@ -1,7 +1,7 @@
 #include "spmm_opt.h"
 
-#define B(i, j) vin[(i) * K + (j)]
-#define C(i, j) vout[(i) * K + (j)]
+#define B(i, j) vin[(i) * feat_in + (j)]
+#define C(i, j) vout[(i) * feat_in + (j)]
 
 __global__ void spmm_kernel_placeholder(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v, int INFEATURE)
 {
