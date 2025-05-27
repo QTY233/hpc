@@ -1739,3 +1739,9 @@ srun -N 1 --gres=gpu:1 ./benchmark 1000
 git add .
 git commit -am "lab2"
 git push
+ls
+git add .
+cp -R /home/course/hpc/assignments/2025/PA3/ ~
+git add .
+git commit -am "pa3 init"
+git push
